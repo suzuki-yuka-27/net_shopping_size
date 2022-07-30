@@ -47,3 +47,5 @@ README〜ER図作成： 7/31〆切
 本番リリース：9月中旬  
 
 [画面遷移図](https://www.figma.com/file/k6cFM3JBXOUhb6XWVpuqEs/Untitled?node-id=0%3A1)
+
+[ER図](https://app.diagrams.net/#Hsuzuki-yuka-27%2Fnet_shopping_size%2F01_edit_README.md%2Fnet_shopping.drawio)
