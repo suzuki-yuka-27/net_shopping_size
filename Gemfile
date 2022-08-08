@@ -4,7 +4,10 @@ source "https://rubygems.org"
 
 gem 'rails', '~> 7.0'
 
+gem 'bootsnap'
+gem 'mysql2', '~> 0.5.4'
 gem 'sorcery', '~> 0.16.3'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.10'
 
 group :development do
