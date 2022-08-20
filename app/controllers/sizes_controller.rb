@@ -1,5 +1,5 @@
 class SizesController < ApplicationController
   def index
-    @size = Size.all
+    @size = Size.new
   end
 end
