@@ -1,0 +1,35 @@
+<div>
+  <h1 class="font-bold text-4xl">Tops新規登録</h1>
+  <%= form_with model: @top do |f| %>
+    <div>
+      <%= f.label :neck %>
+      <%= f.number_field :neck %>
+    </div>
+    <div>
+      <%= f.label :shoulder_width %>
+      <%= f.number_field :shoulder_width %>
+    </div>
+    <div>
+      <%= f.label :body_width %>
+      <%= f.number_field :body_width %>
+    </div>
+    <div>
+      <%= f.label :body_length %>
+      <%= f.number_field :body_length %>
+    </div>
+    <div>
+      <%= f.label :sleeve_length %>
+      <%= f.number_field :sleeve_length %>
+    </div>
+    <div>
+      <%= f.label :sleeve_width %>
+      <%= f.number_field :sleeve_width %>
+    </div>
+    <div>
+      <%= f.submit 'Create', class: 'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' %>
+    </div>
+    <div>
+      <%= link_to 'back', sizes_path %>
+    </div>
+  <% end %>
+</div>

@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_18_143030) do
-  create_table "tops", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_08_19_065648) do
+  create_table "sizes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sizes_on_user_id"
+  end
+
+  create_table "tops", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "size_id", null: false
     t.float "neck", null: false
     t.float "shoulder_width", null: false
     t.float "body_width", null: false
@@ -21,7 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_143030) do
     t.float "sleeve_width", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_tops_on_user_id"
+    t.index ["size_id"], name: "index_tops_on_size_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -35,5 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_143030) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "tops", "users"
+  add_foreign_key "sizes", "users"
+  add_foreign_key "tops", "sizes"
 end
