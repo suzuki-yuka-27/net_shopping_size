@@ -3,11 +3,11 @@
   <%= form_with url: login_path do |f| %>
     <div>
       <%= f.label :email %>
-      <%= f.text_field :email, placeholder: 'メールアドレス', class: "mb-5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= f.text_field :email, placeholder: 'メールアドレス', class: 'mb-5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
     </div>
     <div>
       <%= f.label :password %>
-      <%= f.password_field :password, placeholder: 'パスワード', class: "mb-7 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= f.password_field :password, placeholder: 'パスワード', class: 'mb-7 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
     </div>
     <div class= "flex flex-col items-center">
       <%= f.submit 'Login', class: 'mt-7  bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
