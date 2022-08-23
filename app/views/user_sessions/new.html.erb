@@ -1,14 +1,16 @@
-<h1>Login</h1>
-<%= form_with url: login_path do |f| %>
-  <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.text_field :password %>
-  </div>
-  <div>
-    <%= f.submit 'Login', class: 'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' %>
-  </div>
-<% end %>
+<div class= "p-4 w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+  <h1 class= "text-center font-bold text-4xl m-5">Login</h1>
+  <%= form_with url: login_path do |f| %>
+    <div>
+      <%= f.label :email %>
+      <%= f.text_field :email, placeholder: 'メールアドレス', class: 'mb-5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    </div>
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: 'パスワード', class: 'mb-7 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    </div>
+    <div class= "flex flex-col items-center">
+      <%= f.submit 'Login', class: 'mt-7  bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
+    </div>
+  <% end %>
+</div>
