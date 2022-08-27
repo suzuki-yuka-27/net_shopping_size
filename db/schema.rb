@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_19_065648) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_26_141558) do
+  create_table "bottoms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "size_id", null: false
+    t.float "waist", null: false
+    t.float "hip", null: false
+    t.float "rising_length", null: false
+    t.float "inseam", null: false
+    t.float "total_length", null: false
+    t.float "thickness_of_thigh", null: false
+    t.float "bottom_width", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["size_id"], name: "index_bottoms_on_size_id"
+  end
+
   create_table "sizes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -42,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_19_065648) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "bottoms", "sizes"
   add_foreign_key "sizes", "users"
   add_foreign_key "tops", "sizes"
 end
