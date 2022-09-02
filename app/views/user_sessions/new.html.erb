@@ -1,6 +1,6 @@
 <div class= "p-4 w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
   <h1 class= "text-center font-bold text-4xl m-5">Login</h1>
-  <%= form_with url: login_path do |f| %>
+  <%= form_with url: login_path, local: true do |f| %>
     <div>
       <%= f.label :email %>
       <%= f.text_field :email, placeholder: 'メールアドレス', class: 'mb-5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
@@ -13,4 +13,7 @@
       <%= f.submit 'Login', class: 'mt-7  bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
     </div>
   <% end %>
+  <div class= "text-center mt-7 no-underline hover:underline text-blue-500">
+    <%= link_to '新規登録はこちら', new_user_path %>
+  </div>
 </div>
