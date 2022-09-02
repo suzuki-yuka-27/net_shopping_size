@@ -1,11 +1,11 @@
-<h1 class= "text-center font-bold text-4xl m-5">パターン一覧</h1>
+<h1 class= "text-center font-bold text-4xl m-5"><%= t'.title' %></h1>
 <div>
-  <%= link_to 'New', new_size_path %>
+  <%= link_to t('defaults.new'), new_size_path %>
   <div class= "flex flex-col grid grid-cols-3 gap-5">
     <% if @sizes.present? %>
       <%= render @sizes %>
     <% else %>
-      <p>パターンが存在しません</p>
+      <p>t('.no_category')</p>
     <% end %>
   </div>
 </div>

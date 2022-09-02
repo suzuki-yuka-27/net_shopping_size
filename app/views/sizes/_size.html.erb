@@ -4,6 +4,6 @@
       <%= size.title %>
     </h1>
   <% end %>
-  <%= link_to 'Delete', size_path(size), method: :delete, data: {  confirm: "Are you OK?" } %>
-  <%= link_to 'Edit', edit_size_path(size) %>
+  <%= link_to t('defaults.delete'), size_path(size), method: :delete, data: {  confirm: "Are you OK?" } %>
+  <%= link_to t('defaults.edit'), edit_size_path(size) %>
 </div>
