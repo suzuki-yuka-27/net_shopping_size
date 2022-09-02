@@ -1,0 +1,29 @@
+ja:
+  activerecord:
+    models:
+      user:  'ユーザー'
+      size:  'サイズ'
+      top:  'トップス'
+      bottom:  'ボトムス'
+    attributes:
+      user:
+        email:  'メールアドレス'
+        password:  'パスワード'
+        password_confirmation:  '確認用パスワード'
+      size:
+        title:  'タイトル'
+      top:
+        neck:  '首周り'
+        shoulder_width:  '肩幅'
+        body_width:  '身幅（バスト）'
+        body_length:  '着丈'
+        sleeve_length:  '袖丈'
+        sleeve_width:  '袖幅'
+      bottom:
+        waist:  'ウエスト'
+        hip:  'ヒップ'
+        rising_length:  '股上'
+        inseam:  '股下'
+        total_length:  '総丈'
+        thickness_of_thigh:  'もも幅（わたり）'
+        bottom_width:  '裾幅'

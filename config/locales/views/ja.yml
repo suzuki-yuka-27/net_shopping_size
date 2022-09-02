@@ -1,0 +1,31 @@
+ja:
+  defaults:
+    login:  'ログイン'
+    logout:  'ログアウト'
+    new:  '新規作成'
+    create:  '作成'
+    edit:  '編集'
+    update:  '更新'
+    delete:  '削除'
+  significant:
+    terms_of_service:  '利用規約'
+    privacy_policy:  'プライバシーポリシー'
+    inquiry:  'お問合せ'
+  users:
+    new:
+      title:  'ユーザー登録'
+  user_sessions:
+    new:
+      to_new_user:  '新規登録はこちら'
+  sizes:
+    index:
+      title:  'サイズカテゴリー'
+      no_category:  'カテゴリーが存在しません'
+    new:
+      title:  'サイズカテゴリー'
+  tops:
+    new:
+      title:  'トップスサイズ'
+  bottoms:
+    new:
+      title:  'ボトムスサイズ'
