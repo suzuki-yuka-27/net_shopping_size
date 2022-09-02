@@ -1,6 +1,6 @@
-<h1>Tops</h1>
+<h1><%= Top.model_name.human %></h1>
 <div>
-  <%= link_to 'Edit', edit_top_path %>
+  <%= link_to t('defaults.edit'), edit_top_path %>
   <%= @top.neck %>
   <%= @top.shoulder_width %>
   <%= @top.body_width %>

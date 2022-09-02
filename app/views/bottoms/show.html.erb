@@ -1,6 +1,6 @@
-<h1>bottoms</h1>
+<h1><%= Bottom.model_name.human %></h1>
 <div>
-  <%= link_to 'Edit', edit_bottom_path %>
+  <%= link_to t('defaults.edit'), edit_bottom_path %>
   <%= @bottom.waist %>
   <%= @bottom.hip %>
   <%= @bottom.rising_length %>
