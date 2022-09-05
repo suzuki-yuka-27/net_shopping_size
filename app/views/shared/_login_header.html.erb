@@ -5,10 +5,13 @@
         <%= link_to 'Home', root_path %>
       </li>
       <li class= "mx-3">
-        <%= link_to 'Sizes', new_size_path %>
+        <%= link_to 'Tops', top_path(@top) %>
       </li>
       <li class= "mx-3">
-        <%= link_to t('defaults.logout'), logout_path %>
+        <%= link_to 'Bottoms', bottom_path(@bottom) %>
+      </li>
+      <li class= "mx-3">
+        <%= button_to t('defaults.logout'), logout_path(@user) %>
       </li>
     </ul>
 </header>

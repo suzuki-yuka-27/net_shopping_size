@@ -19,7 +19,7 @@ class BottomsController < ApplicationController
   def edit; end
 
   def update
-    if @bottom.update(update_bottom_params)
+    if @bottom.update(bottom_params)
       redirect_to @bottom
     else
       render :edit
@@ -29,10 +29,6 @@ class BottomsController < ApplicationController
   private
 
   def bottom_params
-    params.require(:bottom).permit(:waist, :hip, :rising_length, :inseam, :total_length, :thickness_of_thigh, :bottom_width).merge(size_id: params[:size_id])
-  end
-
-  def update_bottom_params
     params.require(:bottom).permit(:waist, :hip, :rising_length, :inseam, :total_length, :thickness_of_thigh, :bottom_width)
   end
 
