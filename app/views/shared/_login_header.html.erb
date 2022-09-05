@@ -11,7 +11,7 @@
         <%= link_to 'Bottoms', bottom_path(@bottom) %>
       </li>
       <li class= "mx-3">
-        <%= button_to t('defaults.logout'), logout_path(@user) %>
+        <%= button_to t('defaults.logout'), logout_path, method: :delete %>
       </li>
     </ul>
 </header>
