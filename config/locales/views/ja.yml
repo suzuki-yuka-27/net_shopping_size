@@ -17,15 +17,9 @@ ja:
   user_sessions:
     new:
       to_new_user:  '新規登録はこちら'
-  sizes:
-    index:
-      title:  'サイズカテゴリー'
-      no_category:  'カテゴリーが存在しません'
-    new:
-      title:  'サイズカテゴリー'
   tops:
     new:
-      title:  'トップスサイズ'
+      title:  'トップス'
   bottoms:
     new:
-      title:  'ボトムスサイズ'
+      title:  'ボトムス'
