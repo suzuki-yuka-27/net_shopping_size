@@ -1,5 +1,5 @@
 class Top < ApplicationRecord
-  belongs_to :size
+  belongs_to :user
 
   validates :neck, presence: true
   validates :shoulder_width, presence: true

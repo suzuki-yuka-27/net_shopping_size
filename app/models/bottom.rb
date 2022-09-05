@@ -1,5 +1,5 @@
 class Bottom < ApplicationRecord
-  belongs_to :size
+  belongs_to :user
 
   validates :waist, presence: true
   validates :hip, presence: true
