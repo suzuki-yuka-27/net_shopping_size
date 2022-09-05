@@ -1,9 +1,0 @@
-<div class= "p-4 w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-  <%= link_to size_path(size) do %>
-    <h1 class= "text-center font-bold text-xl m-5">
-      <%= size.title %>
-    </h1>
-  <% end %>
-  <%= link_to t('defaults.delete'), size_path(size), method: :delete, data: {  confirm: "Are you OK?" } %>
-  <%= link_to t('defaults.edit'), edit_size_path(size) %>
-</div>
