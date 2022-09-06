@@ -6,7 +6,7 @@ class BottomsController < ApplicationController
   end
 
   def create
-    @bottom = current_user.bottoms.build(bottom_params)
+    @bottom = current_user.build_bottom(bottom_params)
     if @bottom.save
       redirect_to @bottom
     else
@@ -33,6 +33,6 @@ class BottomsController < ApplicationController
   end
 
   def set_bottom
-    @bottom = current_user.bottoms.find(params[:id])
+    @bottom = User.find(1).bottom
   end
 end
