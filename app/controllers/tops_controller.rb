@@ -6,7 +6,7 @@ class TopsController < ApplicationController
   end
 
   def create
-    @top = current_user.tops.build(top_params)
+    @top = current_user.build_top(top_params)
     if @top.save
       redirect_to @top
     else
@@ -19,7 +19,7 @@ class TopsController < ApplicationController
   def edit; end
 
   def update
-    if @top.update(update_top_params)
+    if @top.update(top_params)
       redirect_to @top
     else
       render :edit
@@ -29,14 +29,10 @@ class TopsController < ApplicationController
   private
 
   def top_params
-    params.require(:top).permit(:neck, :shoulder_width, :body_width, :body_length, :sleeve_length, :sleeve_width).merge(size_id: params[:size_id])
-  end
-
-  def update_top_params
     params.require(:top).permit(:neck, :shoulder_width, :body_width, :body_length, :sleeve_length, :sleeve_width)
   end
 
   def set_top
-    @top = Top.find(params[:id])
+    @top = User.find(1).top
   end
 end

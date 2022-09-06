@@ -7,6 +7,8 @@ ja:
     edit:  '編集'
     update:  '更新'
     delete:  '削除'
+    body_parts: 'ボディーパーツ'
+    size: 'サイズ'
   significant:
     terms_of_service:  '利用規約'
     privacy_policy:  'プライバシーポリシー'
@@ -17,15 +19,3 @@ ja:
   user_sessions:
     new:
       to_new_user:  '新規登録はこちら'
-  sizes:
-    index:
-      title:  'サイズカテゴリー'
-      no_category:  'カテゴリーが存在しません'
-    new:
-      title:  'サイズカテゴリー'
-  tops:
-    new:
-      title:  'トップスサイズ'
-  bottoms:
-    new:
-      title:  'ボトムスサイズ'
