@@ -6,9 +6,9 @@ class TopsController < ApplicationController
   end
 
   def create
-    @top = current_user.tops.build(top_params)
+    @top = current_user.build_top(top_params)
     if @top.save
-      redirect_to sizes_path
+      redirect_to @top
     else
       render :new
     end
@@ -33,6 +33,6 @@ class TopsController < ApplicationController
   end
 
   def set_top
-    @top = current_user.sizes.find(params[:id)
+    @top = User.find(1).top
   end
 end
