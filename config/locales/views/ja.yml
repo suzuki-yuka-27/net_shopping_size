@@ -9,6 +9,10 @@ ja:
     delete:  '削除'
     body_parts: 'ボディーパーツ'
     size: 'サイズ'
+    record_size:  'サイズを記録しました。'
+    not_record_size:  'サイズを記録できませんでした。'
+    update_size:  'サイズを更新しました。'
+    not_update_size:  'サイズを更新できませんでした。'
   significant:
     terms_of_service:  '利用規約'
     privacy_policy:  'プライバシーポリシー'
@@ -16,6 +20,14 @@ ja:
   users:
     new:
       title:  'ユーザー登録'
+    create:
+      success: 'ユーザーを作成しました。'
+      danger: 'ユーザーを作成できませんでした。'
   user_sessions:
     new:
       to_new_user:  '新規登録はこちら'
+    create:
+      success:  'ログインに成功しました。'
+      danger:  'ログインに失敗しました。'
+    destroy:
+      success:  'ログアウトしました。'

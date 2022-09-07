@@ -1,0 +1,13 @@
+<div class= "w-full mt-5 text-center">
+  <% flash.each do |message_type, message| %>
+    <% if message_type = success %>
+      <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg border border-green-400">
+        <%= message %>
+      </div>
+    <% elsif message_type = danger %>
+      <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg border border-red-400">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
