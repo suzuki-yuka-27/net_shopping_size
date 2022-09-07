@@ -1,5 +1,6 @@
 class TopsController < ApplicationController
   before_action :set_top, only: %i[show edit update]
+  before_action :saved_top, only: %i[new]
 
   def new
     @top = Top.new
@@ -36,5 +37,12 @@ class TopsController < ApplicationController
 
   def set_top
     @top = User.find(1).top
+  end
+
+  def saved_top
+    @top = User.find(1).top
+    if @top
+      render :show
+    end
   end
 end
