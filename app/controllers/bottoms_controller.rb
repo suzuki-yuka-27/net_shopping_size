@@ -8,7 +8,7 @@ class BottomsController < ApplicationController
   def create
     @bottom = current_user.build_bottom(bottom_params)
     if @bottom.save
-      redirect_to @bottom, flash[:success] = t('defaults.record_size')
+      redirect_to @bottom, success: t('defaults.record_size')
     else
       flash.now[:danger] = t('defaults.not_record_size')
       render :new
@@ -21,7 +21,7 @@ class BottomsController < ApplicationController
 
   def update
     if @bottom.update(bottom_params)
-      redirect_to @bottom, flash[:success] = t('defaults.update_size')
+      redirect_to @bottom, success: t('defaults.update_size')
     else
       flash[:danger] = t('defaults.not_update_size')
       render :edit
