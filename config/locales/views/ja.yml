@@ -13,6 +13,7 @@ ja:
     not_record_size:  'サイズを記録できませんでした。'
     update_size:  'サイズを更新しました。'
     not_update_size:  'サイズを更新できませんでした。'
+    errors:  '以下の要件を満たしていません。'
   significant:
     terms_of_service:  '利用規約'
     privacy_policy:  'プライバシーポリシー'
