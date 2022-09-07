@@ -8,7 +8,7 @@ class TopsController < ApplicationController
   def create
     @top = current_user.build_top(top_params)
     if @top.save
-      redirect_to @top, success: t('dafaults.record_size')
+      redirect_to @top, success: t('defaults.record_size')
     else
       flash.now[:danger] = t('defaults.not_record_size')
       render :new
