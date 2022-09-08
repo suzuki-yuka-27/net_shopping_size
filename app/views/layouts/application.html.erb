@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NetShoppingSize</title>
+    <title><%= t('defaults.title') %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,18 +11,20 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <%= render 'shared/login_header' %>
-    <% else %>
-      <%= render 'shared/header' %>
-    <% end %>
-    <main class= "container mx-auto">
-      <%= render 'shared/flash_message' %>
-      <div class= "flex flex-col justify-center items-center my-20">
-        <%= yield %>
-      </div>
-    </main>
-    <%= render 'shared/footer' %>
-    <%= render 'shared/phone_menu_bar' %>
+    <div class= "bg-cover" style="background-image: url('<%= asset_path('paint_00001.jpeg') %>');">
+      <% if logged_in? %>
+        <%= render 'shared/login_header' %>
+      <% else %>
+        <%= render 'shared/header' %>
+      <% end %>
+      <main class= "container mx-auto">
+        <div class= "flex flex-col justify-center items-center">
+          <%= render 'shared/flash_message' %>
+          <%= yield %>
+        </div>
+      </main>
+      <%= render 'shared/footer' %>
+      <%= render 'shared/phone_menu_bar' %>
+    </div>
   </body>
 </html>

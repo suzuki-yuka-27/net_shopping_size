@@ -1,1 +1,37 @@
-<p class="text-4xl">クロササイズ</p>
+<div>
+  <%= image_tag 'main_logo.png', size: '800x600' %>
+</div>
+<p class= "font-extrabold p-2 text-sm md:text-base">こんなお悩みありませんか？</p>
+<p class= "text-sm md:text-base">ネットショッピングをするたびにサイズを測っている</p>
+<p class= "p-2 text-sm md:text-base">洋服から小物までまとめてサイズを記録したい</p>
+<p class= "mt-10 text-base md:text-xl font-bold text-center md:whitespace-nowrap">クロササイズは、<br>そんなお悩みを解決するサイズ記録サービスです!</p>
+<% unless logged_in? %>
+  <p class= "mt-8 font-bold">\さっそく始めよう/</p>
+  <div class= "px-16 py-5 mb-10 bg-black text-white font-bold border border-black rounded-full shadow-xl duration-300 hover:bg-white hover:text-black hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
+    <%= link_to t('defaults.login'), login_path %>
+  </div>
+<% end %>
+<% if logged_in? %>
+  <div class= "flex flex-row gap-5 md:gap-10 my-10">
+    <div>
+      <%= link_to new_top_path do %>
+        <div class= "block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
+          <p class= "text-sm font-bold">TOPS</p>
+          <div class= "flex flex-center items-center">
+            <%= image_tag 'hannko:t-shirts.png', size: '120x120' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to new_bottom_path do %>
+        <div class= "block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
+          <p class= "text-sm font-bold mb-3">BOTTOMS</p>
+          <div class= "flex flex-center items-center">
+            <%= image_tag 'hanko:bottoms.png', size: '120x120' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
