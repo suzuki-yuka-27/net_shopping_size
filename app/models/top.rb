@@ -6,7 +6,7 @@ class Top < ApplicationRecord
   validates :body_width, presence: true
   validates :body_length, presence: true
   validates :sleeve_length, presence: true
-  validates :shoulder_width, presence: true
+  validates :sleeve_width, presence: true
 
   attribute :neck, :float, default: 0.0
   attribute :shoulder_width, :float, default: 0.0
