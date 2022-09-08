@@ -36,11 +36,11 @@ class TopsController < ApplicationController
   end
 
   def set_top
-    @top = User.find(1).top
+    @top = User.find(current_user.id).top
   end
 
   def saved_top
-    @top = User.find(1).top
+    @top = User.find(current_user.id).top
     if @top
       render :show
     end

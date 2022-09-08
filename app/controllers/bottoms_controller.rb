@@ -36,11 +36,11 @@ class BottomsController < ApplicationController
   end
 
   def set_bottom
-    @bottom = User.find(1).bottom
+    @bottom = User.find(current_user.id).bottom
   end
 
   def saved_bottom
-    @bottom = User.find(1).bottom
+    @bottom = User.find(current_user.id).bottom
     if @bottom
       render :show
     end
