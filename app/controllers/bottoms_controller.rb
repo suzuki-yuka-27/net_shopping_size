@@ -1,6 +1,6 @@
 class BottomsController < ApplicationController
   before_action :set_bottom, only: %i[show edit update]
-  before_action :saved_bottom
+  before_action :saved_bottom, only: %i[new]
 
   def new
     @bottom = Bottom.new
