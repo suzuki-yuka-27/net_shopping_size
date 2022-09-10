@@ -15,7 +15,7 @@ worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
-bind "unix:///var/www/test_app/tmp/sockets/puma.sock"
+bind "unix:///var/www/net_shopping_size/tmp/sockets/puma.sock"
 # Specifies the `environment` that Puma will run in.
 #
 environment ENV.fetch("RAILS_ENV") { "development" }
