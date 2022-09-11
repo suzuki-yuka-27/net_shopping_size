@@ -50,6 +50,8 @@ test:
 #
 production:
   <<: *default
-  database: net_shopping_size_production
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   username: net_shopping_size
   password: <%= ENV["NET_SHOPPING_SIZE_DATABASE_PASSWORD"] %>
