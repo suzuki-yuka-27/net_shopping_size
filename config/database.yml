@@ -50,6 +50,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: net_shopping_size_production
   username: net_shopping_size
   password: <%= ENV["NET_SHOPPING_SIZE_DATABASE_PASSWORD"] %>
