@@ -7,6 +7,7 @@ gem 'rails', '~> 7.0'
 gem 'bootsnap'
 gem 'mysql2', '~> 0.5.4'
 gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
+gem "puma"
 gem 'sorcery', '~> 0.16.3'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.10'
@@ -25,6 +26,5 @@ end
 
 group :test do
   gem 'capybara'
-  gem "puma"
   gem 'webdrivers'
 end
