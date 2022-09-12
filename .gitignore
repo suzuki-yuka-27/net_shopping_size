@@ -31,7 +31,6 @@
 /config/master.key
 
 .gitattributes
-config.ru
 log/
 public/
 storage/
