@@ -5,7 +5,15 @@ source "https://rubygems.org"
 gem 'rails', '~> 7.0'
 
 gem 'bootsnap'
+<<<<<<< Updated upstream
 #gem 'mysql2', '~> 0.5.4'
+=======
+<<<<<<< HEAD
+gem "puma"
+=======
+#gem 'mysql2', '~> 0.5.4'
+>>>>>>> b9eeac1a4cadee048490c5f827c964750742eb52
+>>>>>>> Stashed changes
 gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
 gem 'sorcery', '~> 0.16.3'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
