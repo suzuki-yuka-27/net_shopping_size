@@ -51,6 +51,15 @@ test:
 production:
   <<: *default
   adapter: postgresql
+<<<<<<< Updated upstream
   database: net_shopping_size_production
+=======
+<<<<<<< HEAD
+  encoding: unicode
+  pool: 5
+=======
+  database: net_shopping_size_production
+>>>>>>> b9eeac1a4cadee048490c5f827c964750742eb52
+>>>>>>> Stashed changes
   username: net_shopping_size
   password: <%= ENV["NET_SHOPPING_SIZE_DATABASE_PASSWORD"] %>
