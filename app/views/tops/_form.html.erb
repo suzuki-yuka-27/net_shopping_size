@@ -1,8 +1,8 @@
-<div class="h-screen">
+<div>
   <h1 class= "text-center font-bold text-4xl m-5">TOPS</h1>
   <%= form_with model: top, url: top_path, local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <div class= "flex flex-row justify-center gap-5 p-5">
+    <div class= "flex flex-row grid grid-cols-2 sm:grid-cols-3 justify-center gap-5 p-5">
       <div class= "flex flex-col items-center">
         <%= f.label :neck %>
         <div class= "flex flex-row mb-5 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
