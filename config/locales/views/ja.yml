@@ -7,7 +7,7 @@ ja:
     edit:  '編集'
     update:  '更新'
     delete:  '削除'
-    title:  'クロササイズ'
+    title:  'クロササイズ - 洋服のジャンルごとにサイズを記録するサービス'
     body_parts: 'ボディーパーツ'
     size: 'サイズ'
     record_size:  'サイズを記録しました。'

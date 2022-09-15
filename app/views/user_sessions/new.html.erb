@@ -1,3 +1,4 @@
+<% content_for(:title, t('defaults.login')) %>
 <div class= "md:mt-16 mb-5 p-4 w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
   <h1 class= "text-center font-bold text-4xl m-5"><%= t('defaults.login') %></h1>
   <%= form_with url: login_path, local: true do |f| %>
