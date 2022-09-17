@@ -1,9 +1,7 @@
 <% content_for(:title, Bottom.model_name.human) %>
 <div>
-  <div class= "flex justify-center">
-    <%= image_tag 'hanko:bottoms.png', size: '50x50' %>
-  </div>
   <h1 class= "text-center font-bold text-4xl m-5"><%= Bottom.model_name.human %></h1>
+  <%= image_tag 'bottoms_guide_image.png', size: '350x350' %>
   <div class="overflow-x-auto shadow-md">
     <table class="w-full text-sm text-center border border-black">
         <thead class="text-xs bg-gray-300 border-b border-black uppercase">
@@ -37,7 +35,7 @@
             </tr>
             <tr class="bg-white border-b">
                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                  <%= Bottom.human_attribute_name(:rising_lengt) %>
+                  <%= Bottom.human_attribute_name(:rising_length) %>
                 </th>
                 <td class="flex flex-row py-4 px-6">
                   <%= @bottom.rising_length %>
