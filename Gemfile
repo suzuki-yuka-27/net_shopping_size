@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
+ruby '3.1.2'
 
 gem 'rails', '~> 7.0'
 
 gem 'bootsnap'
-#gem 'mysql2', '~> 0.5.4'
 gem "puma"
 gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
 gem 'sorcery', '~> 0.16.3'

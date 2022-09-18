@@ -31,10 +31,6 @@
 /config/master.key
 
 .gitattributes
-Rakefile
-bin/
-config.ru
-lib/
 log/
 public/
 storage/
