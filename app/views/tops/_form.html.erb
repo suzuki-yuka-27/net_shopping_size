@@ -1,6 +1,11 @@
 <% content_for(:title, Top.model_name.human) %>
 <div>
-  <h1 class= "text-center font-bold text-4xl m-5">TOPS</h1>
+  <div class= "flex justify-center mb-10">
+    <%= image_tag 'tops_logo_image.png', size: '250x250' %>
+  </div>
+  <div class= "flex justify-center">
+    <%= image_tag 'tops_guide_image.png', size: '350x350' %>
+  </div>
   <%= form_with model: top, url: top_path, local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class= "flex flex-row grid grid-cols-2 sm:grid-cols-3 justify-center gap-5 p-5">

@@ -1,9 +1,9 @@
 <% content_for(:title, Top.model_name.human) %>
 <div>
-  <div class= "flex justify-center">
-    <%= image_tag 'hannko:t-shirts.png', size: '80x80' %>
+  <div class= "flex justify-center mb-10">
+    <%= image_tag 'tops_logo_image.png', size: '250x250' %>
   </div>
-  <h1 class= "text-center font-bold text-4xl m-5"><%= Top.model_name.human %></h1>
+  <%= image_tag 'tops_guide_image.png', size: '350x350' %>
   <div class="overflow-x-auto shadow-md">
     <table class="w-full text-sm text-center border border-black">
         <thead class="text-xs bg-gray-300 border-b border-black uppercase">
@@ -64,10 +64,10 @@
             </tr>
             <tr class="bg-gray-200">
                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
-                  <%= Top.human_attribute_name(:shoulder_width) %>
+                  <%= Top.human_attribute_name(:sleeve_width) %>
                 </th>
                 <td class="flex flex-row py-4 px-6">
-                  <%= @top.shoulder_width %>
+                  <%= @top.sleeve_width %>
                   <p>cm</p>
                 </td>
             </tr>
