@@ -10,6 +10,11 @@
   <div class= "px-16 py-5 mb-10 bg-black text-white font-bold border border-black rounded-full shadow-xl duration-300 hover:bg-white hover:text-black hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
     <%= link_to t('defaults.login'), login_path %>
   </div>
+  <div class="drop-shadow-2xl">
+    <%= link_to auth_at_provider_path(provider: :line) do %>
+      <%= image_tag 'line_login_logo', size: '350x400' %>
+    <% end %>
+  </div>
 <% end %>
 <% if logged_in? %>
   <div class= "flex flex-row gap-5 md:gap-10 my-10">

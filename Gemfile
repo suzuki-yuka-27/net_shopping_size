@@ -6,6 +6,7 @@ ruby '3.1.2'
 gem 'rails', '~> 7.0'
 
 gem 'bootsnap'
+gem 'config'
 gem 'dotenv-rails'
 gem 'omniauth-line'
 gem 'omniauth-rails_csrf_protection'
