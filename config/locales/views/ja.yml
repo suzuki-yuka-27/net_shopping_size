@@ -1,6 +1,7 @@
 ja:
   defaults:
     login:  'ログイン'
+    line_login:  'LINEでログイン'
     logout:  'ログアウト'
     new:  '新規作成'
     create:  '作成'
@@ -34,3 +35,6 @@ ja:
       danger:  'ログインに失敗しました。'
     destroy:
       success:  'ログアウトしました。'
+  oauths:
+    callback:
+      line_login:  '#{provider.titleize}でログインしました。'
