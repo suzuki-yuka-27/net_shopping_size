@@ -8,6 +8,7 @@ gem 'rails', '~> 7.0'
 gem 'bootsnap'
 gem 'config'
 gem 'dotenv-rails'
+gem 'line-bot-api'
 gem 'omniauth-line'
 gem 'omniauth-rails_csrf_protection'
 gem "puma"

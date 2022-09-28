@@ -162,6 +162,7 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    line-bot-api (1.25.0)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -372,6 +373,7 @@ DEPENDENCIES
   config
   dotenv-rails
   factory_bot_rails (~> 6.2)
+  line-bot-api
   mysql2 (~> 0.5.4)
   omniauth-line
   omniauth-rails_csrf_protection
