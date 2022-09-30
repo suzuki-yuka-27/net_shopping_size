@@ -41,7 +41,3 @@ net_shopping.drawio
 !/app/assets/builds/.keep
 /config/credentials.yml
 /.env
-
-config/settings.local.yml
-config/settings/*.local.yml
-config/environments/*.local.yml
