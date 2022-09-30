@@ -10,52 +10,5 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_22_141859) do
-  create_table "authentications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "provider", null: false
-    t.string "uid", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
-  end
-
-  create_table "bottoms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.float "waist", null: false
-    t.float "hip", null: false
-    t.float "rising_length", null: false
-    t.float "inseam", null: false
-    t.float "total_length", null: false
-    t.float "thickness_of_thigh", null: false
-    t.float "bottom_width", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_bottoms_on_user_id"
-  end
-
-  create_table "tops", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.float "neck", null: false
-    t.float "shoulder_width", null: false
-    t.float "body_width", null: false
-    t.float "body_length", null: false
-    t.float "sleeve_length", null: false
-    t.float "sleeve_width", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_tops_on_user_id"
-  end
-
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "crypted_password"
-    t.string "salt"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-  end
-
-  add_foreign_key "bottoms", "users"
-  add_foreign_key "tops", "users"
+ActiveRecord::Schema[7.0].define(version: 0) do
 end

@@ -2,6 +2,7 @@ ja:
   defaults:
     login:  'ログイン'
     line_login:  'LINEでログイン'
+    not_line_login:  'LINEでログインできませんでした。'
     logout:  'ログアウト'
     new:  '新規作成'
     create:  '作成'
