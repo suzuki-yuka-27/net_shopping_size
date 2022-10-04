@@ -5,18 +5,12 @@
 <p class= "text-sm md:text-base">ネットショッピングをするたびにサイズを測っている</p>
 <p class= "p-2 text-sm md:text-base">洋服から小物までまとめてサイズを記録したい</p>
 <p class= "mt-10 text-base md:text-xl font-bold text-center md:whitespace-nowrap">クロササイズは、<br>そんなお悩みを解決するサイズ記録サービスです!</p>
-<% unless logged_in? %>
-  <p class= "mt-8 font-bold">\さっそく始めよう/</p>
-  <div class= "px-16 py-5 mb-10 bg-black text-white font-bold border border-black rounded-full shadow-xl duration-300 hover:bg-white hover:text-black hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
-    <%= link_to t('defaults.login'), login_path %>
-  </div>
-  <div class="drop-shadow-2xl">
-    <%= link_to auth_at_provider_path(provider: :line) do %>
+  <div class="flex flex-col items-center drop-shadow-2xl">
+    <p class= "mt-8 font-bold">\さっそく始めよう/</p>
+    <%= link_to line_login_api_login_path, method: :post do %>
       <%= image_tag 'line_login_logo', size: '350x400' %>
     <% end %>
   </div>
-<% end %>
-<% if logged_in? %>
   <div class= "flex flex-row gap-5 md:gap-10 my-10">
     <div>
       <%= link_to new_top_path do %>
@@ -39,4 +33,3 @@
       <% end %>
     </div>
   </div>
-<% end %>

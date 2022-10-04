@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  post "oauth/callback", to: "oauths#callback"
-  get "oauth/callback", to: "oauths#callback"
-  get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
-  post "/callback", to: "line_bot#callback"
+  get 'line_login_api/login', to: 'line_login_api#login'
+  get 'line_login_api/callback', to: 'line_login_api#callback'
 
   resource :top, only: %i[new create show edit update]
   resource :bottom, only: %i[new create show edit update]
