@@ -1,2 +1,0 @@
-sorcery:
-  line_callback_url: 'https://cloth-to-size.herokuapp.com/oauth/callback?provider=line'

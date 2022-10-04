@@ -1,7 +1,6 @@
 ja:
   defaults:
     login:  'ログイン'
-    line_login:  'LINEでログイン'
     logout:  'ログアウト'
     new:  '新規作成'
     create:  '作成'
@@ -21,20 +20,8 @@ ja:
     terms_of_service:  '利用規約'
     privacy_policy:  'プライバシーポリシー'
     inquiry:  'お問合せ'
-  users:
-    new:
-      title:  'ユーザー登録'
-    create:
-      success: 'ユーザーを作成しました。'
-      danger: 'ユーザーを作成できませんでした。'
-  user_sessions:
-    new:
-      to_new_user:  '新規登録はこちら'
-    create:
-      success:  'ログインに成功しました。'
-      danger:  'ログインに失敗しました。'
-    destroy:
-      success:  'ログアウトしました。'
-  oauths:
+  line_login_api:
     callback:
-      line_login:  '#{provider.titleize}でログインしました。'
+      login:  'ログインに成功しました！'
+      not_login:  'ログインに失敗しました。'
+      login_error:  '不正なアクセスであるため、ログインできません。'
