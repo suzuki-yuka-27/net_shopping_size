@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+/vendor/bundle
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -25,19 +26,11 @@
 !/tmp/storage/
 !/tmp/storage/.keep
 
-/public/assets
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
-.gitattributes
-log/
-public/
-storage/
-tmp/
-vendor/
-net_shopping.drawio
-/app/assets/builds/*
-!/app/assets/builds/.keep
 /config/credentials.yml
+
+# dotenv, dotenv-rails
+# TODO Comment out these rules if environment variables can be committed
 /.env
