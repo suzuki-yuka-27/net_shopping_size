@@ -1,6 +1,5 @@
 class TopsController < ApplicationController
   before_action :set_top, only: %i[show edit update]
-  before_action :saved_top, only: %i[new]
 
   def new
     @top = Top.new
@@ -39,10 +38,4 @@ class TopsController < ApplicationController
     @top = User.find(current_user.id).top
   end
 
-  def saved_top
-    @top = User.find(current_user.id).top
-    if @top
-      render :show
-    end
-  end
 end
