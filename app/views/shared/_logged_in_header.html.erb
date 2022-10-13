@@ -2,4 +2,7 @@
   <%= link_to root_path do %>
     <%= image_tag 'cloth_size_sub_logo.png', size: '200x200' %>
   <% end %>
+  <div class= "mx-5 font-bold">
+    <%= link_to t('defaults.logout'), logout_path, method: :delete %>
+  </div>
 </header>

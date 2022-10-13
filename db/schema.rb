@@ -10,8 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_04_062809) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_13_064913) do
   create_table "bottoms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title", null: false
     t.float "waist", null: false
     t.float "hip", null: false
     t.float "rising_length", null: false
@@ -19,28 +20,35 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_062809) do
     t.float "total_length", null: false
     t.float "thickness_of_thigh", null: false
     t.float "bottom_width", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bottoms_on_user_id"
   end
 
   create_table "tops", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title", null: false
     t.float "neck", null: false
     t.float "shoulder_width", null: false
     t.float "body_width", null: false
     t.float "body_length", null: false
     t.float "sleeve_length", null: false
     t.float "sleeve_width", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_tops_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "line_user_id", null: false
+    t.string "email", null: false
+    t.string "crypted_password"
+    t.string "salt"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["line_user_id"], name: "index_users_on_line_user_id", unique: true
   end
 
+  add_foreign_key "bottoms", "users"
+  add_foreign_key "tops", "users"
 end
