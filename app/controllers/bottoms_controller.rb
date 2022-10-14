@@ -1,6 +1,5 @@
 class BottomsController < ApplicationController
   before_action :set_bottom, only: %i[show edit update]
-  before_action :saved_bottom, only: %i[new]
 
   def new
     @bottom = Bottom.new
@@ -37,12 +36,5 @@ class BottomsController < ApplicationController
 
   def set_bottom
     @bottom = User.find(current_user.id).bottom
-  end
-
-  def saved_bottom
-    @bottom = User.find(current_user.id).bottom
-    if @bottom
-      render :show
-    end
   end
 end

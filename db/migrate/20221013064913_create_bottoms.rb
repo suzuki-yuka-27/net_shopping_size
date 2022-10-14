@@ -1,6 +1,7 @@
 class CreateBottoms < ActiveRecord::Migration[7.0]
   def change
     create_table :bottoms do |t|
+      t.string :title, null: false
       t.float :waist, null: false
       t.float :hip, null: false
       t.float :rising_length, null: false
@@ -8,6 +9,7 @@ class CreateBottoms < ActiveRecord::Migration[7.0]
       t.float :total_length, null: false
       t.float :thickness_of_thigh, null: false
       t.float :bottom_width, null: false
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

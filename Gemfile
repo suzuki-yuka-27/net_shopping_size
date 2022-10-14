@@ -7,9 +7,11 @@ gem 'rails', '~> 7.0'
 
 gem 'bootsnap'
 gem 'dotenv-rails'
+gem 'jquery-rails'
 gem 'line-bot-api'
 gem "puma"
 gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
+gem 'sorcery'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.10'
 gem 'typhoeus'

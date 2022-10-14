@@ -10,6 +10,7 @@ ja:
         password:  'パスワード'
         password_confirmation:  '確認用パスワード'
       top:
+        title:  'タイトル'
         neck:  '首周り'
         shoulder_width:  '肩幅'
         body_width:  '身幅（バスト）'
@@ -17,6 +18,7 @@ ja:
         sleeve_length:  '袖丈'
         sleeve_width:  '袖幅'
       bottom:
+        title:  'タイトル'
         waist:  'ウエスト'
         hip:  'ヒップ'
         rising_length:  '股上'

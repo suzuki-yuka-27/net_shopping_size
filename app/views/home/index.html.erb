@@ -5,15 +5,19 @@
 <p class= "text-sm md:text-base">ネットショッピングをするたびにサイズを測っている</p>
 <p class= "p-2 text-sm md:text-base">洋服から小物までまとめてサイズを記録したい</p>
 <p class= "mt-10 text-base md:text-xl font-bold text-center md:whitespace-nowrap">クロササイズは、<br>そんなお悩みを解決するサイズ記録サービスです!</p>
-  <div class="flex flex-col items-center drop-shadow-2xl">
-    <p class= "mt-8 font-bold">\さっそく始めよう/</p>
-    <%= link_to line_login_api_login_path, method: :post do %>
-      <%= image_tag 'line_login_logo', size: '350x400' %>
-    <% end %>
+<div class="flex flex-col items-center drop-shadow-2xl">
+  <p class= "mt-8 font-bold">\さっそく始めよう/</p>
+  <%= link_to line_login_api_login_path, method: :post do %>
+    <%= image_tag 'line_login_logo', size: '350x400' %>
+  <% end %>
+  <div class= "mt-10 px-16 py-5 bg-black rounded-full text-white font-bold">
+    <%= button_to t('defaults.guest_login'), '/guest_login', method: :post, data: { confirm: 'ログアウトしてもよろしいですか？' } %>
   </div>
+</div>
+<% if logged_in? %>
   <div class= "flex flex-row gap-5 md:gap-10 my-10">
     <div>
-      <%= link_to new_top_path do %>
+      <%= link_to tops_path do %>
         <div class= "block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
           <p class= "text-sm font-bold">TOPS</p>
           <div class= "flex flex-center items-center">
@@ -23,7 +27,7 @@
       <% end %>
     </div>
     <div>
-      <%= link_to new_bottom_path do %>
+      <%= link_to bottoms_path do %>
         <div class= "block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
           <p class= "text-sm font-bold mb-3">BOTTOMS</p>
           <div class= "flex flex-center items-center">
@@ -33,3 +37,4 @@
       <% end %>
     </div>
   </div>
+<% end %>
