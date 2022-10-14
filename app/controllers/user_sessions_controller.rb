@@ -1,13 +1,18 @@
 class UserSessionsController < ApplicationController
   def guest_login
     @guest_user = User.create(
+      id: SecureRandom.base58,
       name: 'ゲスト',
       email: 'guest@example',
-      password: 'password01',
-      password_confirmation: 'password01'
+      password: 'password',
+      password_confirmation: 'password'
     )
-    auto_login(@guest_user)
-    redirect_to root_path, success: t('.login')
+    if current_user
+      redirect_back_or_to root_path, warning: t('.logged_in')
+    else
+      auto_login(@guest_user)
+      redirect_to root_path, success: t('.login')
+    end
   end
 
   def destroy

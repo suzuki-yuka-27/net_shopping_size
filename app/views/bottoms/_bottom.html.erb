@@ -1,0 +1,18 @@
+<div class= "flex flex-col items-center">
+  <%= image_tag 'card.hunger', size: '200x200' %>
+  <div class= "block p-6 mx-10 w-72 bg-black shadow-md">
+    <div class= "flex justify-center mb-7 px-5 text-xl font-bold tracking-tight text-white hover:cursor-pointer ">
+      <%= link_to bottom_path(bottom) do %>
+        <%= bottom.title %>
+      <% end %>
+    </div>
+    <div class= "flex flex-row justify-end gap-5">
+      <div class= "underline decoration-solid text-white font-semibold">
+        <%= link_to 'Edit', edit_bottom_path(bottom) %>
+      </div>
+      <div class= "underline decoration-solid text-white font-semibold">
+        <%= link_to 'Delete', bottom_path(bottom), method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>

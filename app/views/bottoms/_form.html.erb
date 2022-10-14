@@ -6,66 +6,72 @@
   <div class= "flex justify-center">
     <%= image_tag 'bottoms_guide_image.png', size: '350x350' %>
   </div>
-  <%= form_with model: bottom, url: bottom_path, local: true do |f| %>
+  <%= form_with model: bottom, local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
+    <div class= "flex flex-col items-center">
+      <%= f.label :title %>
+      <div class= "flex flex-row mb-5 shadow rounded text-gray-700">
+        <%= f.text_field :title, placeholder: Bottom.human_attribute_name(:title), class: 'bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+      </div>
+    </div>
     <div class= "flex flex-row grid grid-cols-2 sm:grid-cols-3 justify-center gap-5 p-5">
       <div class= "flex flex-col items-center">
         <%= f.label :waist %>
-        <div class= "flex flex-row mb-5 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-          <%= f.text_field :waist, placeholder: '0.0', class: 'w-16 border-none focus:outline-none text-end' %>
+        <div class= "flex flex-row">
+          <%= f.text_field :waist, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
           <p class= "p-2">cm</p>
         </div>
       </div>
       <div class= "flex flex-col items-center">
         <%= f.label :hip %>
-        <div class= "flex flex-row mb-5 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-          <%= f.text_field :hip, placeholder: '0.0', class: 'w-16 border-none focus:outline-none text-end' %>
+        <div class= "flex flex-row">
+          <%= f.text_field :hip, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
           <p class= "p-2">cm</p>
         </div>
       </div>
       <div class= "flex flex-col items-center">
         <%= f.label :rising_length %>
-        <div class= "flex flex-row mb-5 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-          <%= f.text_field :rising_length, placeholder: '0.0', class: 'w-16 border-none focus:outline-none text-end' %>
+        <div class= "flex flex-row">
+          <%= f.text_field :rising_length, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
           <p class= "p-2">cm</p>
         </div>
       </div>
       <div class= "flex flex-col items-center">
         <%= f.label :inseam %>
-        <div class= "flex flex-row mb-5 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-          <%= f.text_field :inseam, placeholder: '0.0', class: 'w-16 border-none focus:outline-none text-end' %>
+        <div class= "flex flex-row">
+          <%= f.text_field :inseam, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
           <p class= "p-2">cm</p>
         </div>
       </div>
       <div class= "flex flex-col items-center">
         <%= f.label :total_length %>
-        <div class= "flex flex-row mb-5 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-          <%= f.text_field :total_length, placeholder: '0.0', class: 'w-16 border-none focus:outline-none text-end' %>
+        <div class= "flex flex-row">
+          <%= f.text_field :total_length, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
           <p class= "p-2">cm</p>
         </div>
       </div>
       <div class= "flex flex-col items-center">
         <%= f.label :thickness_of_thigh %>
-        <div class= "flex flex-row mb-5 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-          <%= f.text_field :thickness_of_thigh, placeholder: '0.0', class: 'w-16 border-none focus:outline-none text-end' %>
+        <div class= "flex flex-row">
+          <%= f.text_field :thickness_of_thigh, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
           <p class= "p-2">cm</p>
         </div>
       </div>
       <div class= "flex flex-col items-center">
         <%= f.label :bottom_width %>
-        <div class= "flex flex-row mb-5 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-          <%= f.text_field :bottom_width, placeholder: '0.0', class: 'w-16 border-none focus:outline-none text-end' %>
+        <div class= "flex flex-row">
+          <%= f.text_field :bottom_width, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
           <p class= "p-2">cm</p>
         </div>
       </div>
     </div>
     <% if current_page?(controller: 'bottoms', action: 'new') %>
       <div class= "flex flex-col items-center">
-        <%= f.submit t('defaults.create'), class: 'mt-7  bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
+        <%= f.submit t('defaults.create'), class: 'mt-7 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
       </div>
     <% else %>
       <div class= "flex flex-col items-center">
-        <%= f.submit t('defaults.update'), class: 'mt-7  bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
+        <%= f.submit t('defaults.update'), class: 'mt-7 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
       </div>
     <% end %>
   <% end %>
