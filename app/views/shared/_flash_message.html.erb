@@ -8,6 +8,10 @@
       <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg border border-red-400">
         <%= message %>
       </div>
+    <% elsif message_type = warning %>
+      <div class="p-4 mb-4 text-sm text-amber-700 bg-amber-100 rounded-lg border border-amber-400">
+        <%= message %>
+      </div>
     <% end %>
   <% end %>
 </div>
