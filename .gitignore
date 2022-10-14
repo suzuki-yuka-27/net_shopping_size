@@ -34,3 +34,5 @@
 # dotenv, dotenv-rails
 # TODO Comment out these rules if environment variables can be committed
 /.env
+
+/node_modules
