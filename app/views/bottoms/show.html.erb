@@ -6,81 +6,81 @@
   <%= image_tag 'bottoms_guide_image.png', size: '350x350' %>
   <div class="overflow-x-auto shadow-md">
     <table class="w-full text-sm text-center border border-black">
-        <thead class="text-xs bg-gray-300 border-b border-black uppercase">
-            <tr>
-                <th scope="col" class="py-3 px-6">
-                  <%= t('defaults.body_parts') %>
-                </th>
-                <th scope="col" class="py-3 px-6">
-                  <%= t('defaults.size') %>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="bg-white border-b">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                  <%= Bottom.human_attribute_name(:waist) %>
-                </th>
-                <td class="flex flex-row py-4 px-6">
-                  <%= @bottom.waist %>
-                  <p>cm</p>
-                </td>
-            </tr>
-            <tr class="bg-gray-200 border-b">
-                <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap">
-                  <%= Bottom.human_attribute_name(:hip) %>
-                </th>
-                <td class="flex flex-row py-4 px-6">
-                  <%= @bottom.hip %>
-                  <p>cm</p>
-                </td>
-            </tr>
-            <tr class="bg-white border-b">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                  <%= Bottom.human_attribute_name(:rising_length) %>
-                </th>
-                <td class="flex flex-row py-4 px-6">
-                  <%= @bottom.rising_length %>
-                  <p>cm</p>
-                </td>
-            </tr>
-            <tr class="bg-gray-200 border-b">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                  <%= Bottom.human_attribute_name(:inseam) %>
-                </th>
-                <td class="flex flex-row py-4 px-6">
-                  <%= @bottom.inseam %>
-                  <p>cm</p>
-                </td>
-            </tr>
-            <tr class="bg-white border-b">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
-                  <%= Bottom.human_attribute_name(:total_length) %>
-                </th>
-                <td class="flex flex-row py-4 px-6">
-                  <%= @bottom.total_length %>
-                  <p>cm</p>
-                </td>
-            </tr>
-            <tr class="bg-gray-200">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
-                  <%= Bottom.human_attribute_name(:thickness_of_thigh) %>
-                </th>
-                <td class="flex flex-row py-4 px-6">
-                  <%= @bottom.thickness_of_thigh %>
-                  <p>cm</p>
-                </td>
-            </tr>
-            <tr class="bg-white">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
-                  <%= Bottom.human_attribute_name(:bottom_width) %>
-                </th>
-                <td class="flex flex-row py-4 px-6">
-                  <%= @bottom.bottom_width %>
-                  <p>cm</p>
-                </td>
-            </tr>
-        </tbody>
+      <thead class="text-xs bg-gray-300 border-b border-black uppercase">
+        <tr>
+          <th scope="col" class="py-3 px-6">
+            <%= t('defaults.body_parts') %>
+          </th>
+          <th scope="col" class="py-3 px-6">
+            <%= t('defaults.size') %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-white border-b">
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+            <%= Bottom.human_attribute_name(:waist) %>
+          </th>
+          <td class="flex flex-row py-4 px-6">
+            <%= @bottom.waist %>
+            <p>cm</p>
+          </td>
+        </tr>
+        <tr class="bg-gray-200 border-b">
+          <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap">
+            <%= Bottom.human_attribute_name(:hip) %>
+          </th>
+          <td class="flex flex-row py-4 px-6">
+            <%= @bottom.hip %>
+            <p>cm</p>
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+            <%= Bottom.human_attribute_name(:rising_length) %>
+          </th>
+          <td class="flex flex-row py-4 px-6">
+            <%= @bottom.rising_length %>
+            <p>cm</p>
+          </td>
+        </tr>
+        <tr class="bg-gray-200 border-b">
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+            <%= Bottom.human_attribute_name(:inseam) %>
+          </th>
+          <td class="flex flex-row py-4 px-6">
+            <%= @bottom.inseam %>
+            <p>cm</p>
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
+            <%= Bottom.human_attribute_name(:total_length) %>
+          </th>
+          <td class="flex flex-row py-4 px-6">
+            <%= @bottom.total_length %>
+            <p>cm</p>
+          </td>
+        </tr>
+        <tr class="bg-gray-200">
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
+            <%= Bottom.human_attribute_name(:thickness_of_thigh) %>
+          </th>
+          <td class="flex flex-row py-4 px-6">
+            <%= @bottom.thickness_of_thigh %>
+            <p>cm</p>
+          </td>
+        </tr>
+        <tr class="bg-white">
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
+            <%= Bottom.human_attribute_name(:bottom_width) %>
+          </th>
+          <td class="flex flex-row py-4 px-6">
+            <%= @bottom.bottom_width %>
+            <p>cm</p>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
   <div class= "px-24 py-3 mt-10 border-2 border-black rounded-md bg-black text-center text-white hover:bg-white hover:text-black duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
