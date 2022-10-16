@@ -26,3 +26,6 @@ ja:
         total_length:  '総丈'
         thickness_of_thigh:  'もも幅（わたり）'
         bottom_width:  '裾幅'
+      hat:
+        title:  'タイトル'
+        head_circumference:  '頭周り'

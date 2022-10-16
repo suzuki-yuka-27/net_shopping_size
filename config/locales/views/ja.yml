@@ -10,6 +10,7 @@ ja:
     delete:  '削除'
     title:  'クロササイズ - 洋服のジャンルごとにサイズを記録するサービス'
     size: 'サイズ'
+    body_parts:  '部位'
     record_size:  'サイズを記録しました。'
     not_record_size:  'サイズを記録できませんでした。'
     update_size:  'サイズを更新しました。'

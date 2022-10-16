@@ -15,16 +15,28 @@
   </div>
 </div>
 <% if logged_in? %>
-  <div class= "flex flex-row gap-5 md:gap-10 my-10">
-    <div>
-      <%= link_to tops_path do %>
-        <div class= "block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
-          <p class= "text-sm font-bold">TOPS</p>
-          <div class= "flex flex-center items-center">
-            <%= image_tag 'stamp_tops.png', size: '120x120' %>
+  <div class= "grid grid-cols-2 gap-5 md:gap-10 my-10">
+    <div class= "flex flex-col gap-5 md:gap-10">
+      <div>
+        <%= link_to tops_path do %>
+          <div class= "block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
+            <p class= "text-sm font-bold">TOPS</p>
+            <div class= "flex flex-center items-center">
+              <%= image_tag 'stamp_tops.png', size: '120x120' %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to hats_path do %>
+          <div class= "block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
+            <p class= "text-sm font-bold mb-3">HATS</p>
+            <div class= "flex flex-center items-center">
+              <%= image_tag 'stamp_hats.png', size: '120x120' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div>
       <%= link_to bottoms_path do %>
