@@ -29,3 +29,6 @@ ja:
       hat:
         title:  'タイトル'
         head_circumference:  '頭周り'
+      ring:
+        title:  'タイトル'
+        finger_circumference:  '指周り'

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :tops
   resources :bottoms
   resources :hats
+  resources :rings
 end
