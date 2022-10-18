@@ -46,5 +46,4 @@ class HatsController < ApplicationController
   def set_hat
     @hat = current_user.hats.find(params[:id])
   end
-
 end

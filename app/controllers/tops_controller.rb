@@ -46,5 +46,4 @@ class TopsController < ApplicationController
   def set_top
     @top = current_user.tops.find(params[:id])
   end
-
 end
