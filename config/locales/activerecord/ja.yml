@@ -42,3 +42,11 @@ ja:
         body_length:  '着丈'
         sleeve_length:  '袖丈'
         sleeve_width:  '袖幅'
+      outer:
+        title:  'タイトル'
+        neck:  '首周り'
+        shoulder_width:  '肩幅'
+        body_width:  '身幅（バスト）'
+        body_length:  '着丈'
+        sleeve_length:  '袖丈'
+        sleeve_width:  '袖幅'
