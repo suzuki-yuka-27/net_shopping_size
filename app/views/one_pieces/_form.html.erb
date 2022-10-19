@@ -1,0 +1,85 @@
+<% content_for(:title, OnePiece.model_name.human) %>
+<div>
+  <div class= "flex justify-center mb-10">
+    <%= image_tag 'one_pieces_logo_image.png', size: '250x250' %>
+  </div>
+  <div class= "flex justify-center">
+    <%= image_tag 'one_pieces_guide_image.png', size: '350x350' %>
+  </div>
+  <%= form_with model: one_piece, local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class= "flex flex-col items-center">
+      <%= f.label :title %>
+      <div class= "flex flex-row mb-5 shadow rounded text-gray-700">
+        <%= f.text_field :title, placeholder: OnePiece.human_attribute_name(:title), class: 'bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+      </div>
+    </div>
+    <div class= "flex flex-row grid grid-cols-2 sm:grid-cols-3 justify-center gap-5 p-5">
+      <div class= "flex flex-col items-center">
+        <%= f.label :neck %>
+        <div class= "flex flex-row">
+          <%= f.text_field :neck, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+          <p class= "p-2">cm</p>
+        </div>
+      </div>
+      <div class= "flex flex-col items-center">
+        <%= f.label :shoulder_width %>
+        <div class= "flex flex-row">
+          <%= f.text_field :shoulder_width, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+          <p class= "p-2">cm</p>
+        </div>
+      </div>
+      <div class= "flex flex-col items-center">
+        <%= f.label :bust %>
+        <div class= "flex flex-row">
+          <%= f.text_field :bust, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+          <p class= "p-2">cm</p>
+        </div>
+      </div>
+      <div class= "flex flex-col items-center">
+        <%= f.label :waist %>
+        <div class= "flex flex-row">
+          <%= f.text_field :waist, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+          <p class= "p-2">cm</p>
+        </div>
+      </div>
+      <div class= "flex flex-col items-center">
+        <%= f.label :hip %>
+        <div class= "flex flex-row">
+          <%= f.text_field :hip, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+          <p class= "p-2">cm</p>
+        </div>
+      </div>
+      <div class= "flex flex-col items-center">
+        <%= f.label :body_length %>
+        <div class= "flex flex-row">
+          <%= f.text_field :body_length, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+          <p class= "p-2">cm</p>
+        </div>
+      </div>
+      <div class= "flex flex-col items-center">
+        <%= f.label :sleeve_length %>
+        <div class= "flex flex-row">
+          <%= f.text_field :sleeve_length, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+          <p class= "p-2">cm</p>
+        </div>
+      </div>
+      <div class= "flex flex-col items-center">
+        <%= f.label :sleeve_width %>
+        <div class= "flex flex-row">
+          <%= f.text_field :sleeve_width, placeholder: '0.0', class: 'w-16 mb-5 shadow text-gray-70 text-end bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+          <p class= "p-2">cm</p>
+        </div>
+      </div>
+    </div>
+    <% if current_page?(controller: 'one_pieces', action: 'new') %>
+      <div class= "flex flex-col items-center">
+        <%= f.submit t('defaults.create'), class: 'mt-7 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
+      </div>
+    <% else %>
+      <div class= "flex flex-col items-center">
+        <%= f.submit t('defaults.update'), class: 'mt-7 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

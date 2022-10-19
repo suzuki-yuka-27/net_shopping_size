@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :bottoms, dependent: :destroy
   has_many :hats, dependent: :destroy
   has_many :rings, dependent: :destroy
+  has_many :one_pieces, dependent: :destroy
 
 
   validates :password, length: { minimum: 5 }, if: -> { new_record? || changes[:crypted_password] }

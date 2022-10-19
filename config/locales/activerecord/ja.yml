@@ -32,3 +32,13 @@ ja:
       ring:
         title:  'タイトル'
         finger_circumference:  '指周り'
+      one_piece:
+        title:  'タイトル'
+        neck:  '首周り'
+        shoulder_width:  '肩幅'
+        bust:  'バスト'
+        waist:  'ウエスト'
+        hip:  'ヒップ'
+        body_length:  '着丈'
+        sleeve_length:  '袖丈'
+        sleeve_width:  '袖幅'
