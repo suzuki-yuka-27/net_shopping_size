@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_18_074406) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_19_113233) do
   create_table "bottoms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
     t.float "waist", null: false
@@ -51,6 +51,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_074406) do
     t.index ["user_id"], name: "index_one_pieces_on_user_id"
   end
 
+  create_table "outers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title", null: false
+    t.float "neck", null: false
+    t.float "shoulder_width", null: false
+    t.float "body_width", null: false
+    t.float "body_length", null: false
+    t.float "sleeve_length", null: false
+    t.float "sleeve_width", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_outers_on_user_id"
+  end
+
   create_table "rings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
     t.float "finger_circumference", null: false
@@ -74,6 +88,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_074406) do
     t.index ["user_id"], name: "index_tops_on_user_id"
   end
 
+  create_table "underwears", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title", null: false
+    t.float "top_bust", null: false
+    t.float "under_bust", null: false
+    t.float "waist", null: false
+    t.float "hip", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_underwears_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", null: false
     t.string "crypted_password"
@@ -86,6 +112,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_074406) do
   add_foreign_key "bottoms", "users"
   add_foreign_key "hats", "users"
   add_foreign_key "one_pieces", "users"
+  add_foreign_key "outers", "users"
   add_foreign_key "rings", "users"
   add_foreign_key "tops", "users"
+  add_foreign_key "underwears", "users"
 end

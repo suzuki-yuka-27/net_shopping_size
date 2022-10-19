@@ -50,3 +50,9 @@ ja:
         body_length:  '着丈'
         sleeve_length:  '袖丈'
         sleeve_width:  '袖幅'
+      underwear:
+        title:  'タイトル'
+        top_bust:  'トップバスト'
+        under_bust:  'アンダーバスト'
+        waist:  'ウエスト'
+        hip:  'ヒップ'

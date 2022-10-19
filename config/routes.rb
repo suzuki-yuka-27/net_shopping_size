@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :rings
   resources :one_pieces
   resources :outers
+  resources :underwears
 end
