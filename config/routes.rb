@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :bottoms
   resources :hats
   resources :rings
+  resources :one_pieces
 end
