@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'user_sessions#destroy'
   get 'line_login_api/login', to: 'line_login_api#login'
   get 'line_login_api/callback', to: 'line_login_api#callback'
+  post '/callback', to: 'line_bot#callback'
 
   resources :tops
   resources :bottoms
