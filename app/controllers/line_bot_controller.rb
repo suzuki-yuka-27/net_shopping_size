@@ -38,12 +38,12 @@ class LineBotController < ApplicationController
         @tops.each do |top|
           text <<
           top.title + "\n" +
-          Top.human_attribute_name(:neck) + ":" + top.neck.to_s + "cm" + "\n" +
-          Top.human_attribute_name(:shoulder_width) +  ":" + top.shoulder_width.to_s + "cm" + "\n" +
-          Top.human_attribute_name(:body_width) + ":" + top.body_width.to_s+ "cm" + "\n" +
-          Top.human_attribute_name(:body_length) + ":" + top.body_length.to_s + "cm" + "\n" +
-          Top.human_attribute_name(:sleeve_length) + ":" + top.sleeve_length.to_s + "cm" + "\n" +
-          Top.human_attribute_name(:sleeve_width) + ":" + top.sleeve_width.to_s + "cm" + "\n" +
+          Top.human_attribute_name(:neck) + "  " + top.neck.to_s + "cm" + "\n" +
+          Top.human_attribute_name(:shoulder_width) +  "  " + top.shoulder_width.to_s + "cm" + "\n" +
+          Top.human_attribute_name(:body_width) + "  " + top.body_width.to_s+ "cm" + "\n" +
+          Top.human_attribute_name(:body_length) + "  " + top.body_length.to_s + "cm" + "\n" +
+          Top.human_attribute_name(:sleeve_length) + "  " + top.sleeve_length.to_s + "cm" + "\n" +
+          Top.human_attribute_name(:sleeve_width) + "  " + top.sleeve_width.to_s + "cm" + "\n" +
           "\n"
         end
       else
@@ -57,13 +57,13 @@ class LineBotController < ApplicationController
         @bottoms.each do |bottom|
           text <<
           bottom.title + "\n" +
-          Bottom.human_attribute_name(:waist) + ":" + bottom.waist.to_s + "cm" + "\n" +
-          Bottom.human_attribute_name(:hip) + ":" + bottom.hip.to_s + "cm" + "\n" +
-          Bottom.human_attribute_name(:rising_length) + ":" + bottom.rising_length.to_s + "cm" + "\n" +
-          Bottom.human_attribute_name(:inseam) + ":" + bottom.inseam.to_s + "cm" + "\n" +
-          Bottom.human_attribute_name(:total_length) + ":" + bottom.total_length.to_s + "cm" + "\n" +
-          Bottom.human_attribute_name(:thickness_of_thigh) + ":" + bottom.thickness_of_thigh.to_s + "cm" + "\n" +
-          Bottom.human_attribute_name(:bottom_width) + ":" + bottom.bottom_width.to_s + "cm"
+          Bottom.human_attribute_name(:waist) + "  " + bottom.waist.to_s + "cm" + "\n" +
+          Bottom.human_attribute_name(:hip) + "  " + bottom.hip.to_s + "cm" + "\n" +
+          Bottom.human_attribute_name(:rising_length) + "  " + bottom.rising_length.to_s + "cm" + "\n" +
+          Bottom.human_attribute_name(:inseam) + "  " + bottom.inseam.to_s + "cm" + "\n" +
+          Bottom.human_attribute_name(:total_length) + "  " + bottom.total_length.to_s + "cm" + "\n" +
+          Bottom.human_attribute_name(:thickness_of_thigh) + "  " + bottom.thickness_of_thigh.to_s + "cm" + "\n" +
+          Bottom.human_attribute_name(:bottom_width) + "  " + bottom.bottom_width.to_s + "cm"
           "\n"
         end
       else
@@ -77,14 +77,14 @@ class LineBotController < ApplicationController
         @one_pieces.each do |one_piece|
           text <<
           OnePiece.title + "\n" +
-          OnePiece.human_attribute_name(:neck) + ":" + one_piece.neck.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:shoulder_width) + ":" + one_piece.shoulder_width.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:bust) + ":" + one_piece.bust.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:waist) + ":" + one_piece.waist.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:hip) + ":" + one_piece.hip.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:body_length) + ":" + one_piece.body_length.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:sleeve_length) + ":" + one_piece.sleeve_length.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:sleeve_width) + ":" + one_piece.sleeve_width.to_s + "cm"
+          OnePiece.human_attribute_name(:neck) + "  " + one_piece.neck.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:shoulder_width) + "  " + one_piece.shoulder_width.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:bust) + "  " + one_piece.bust.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:waist) + "  " + one_piece.waist.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:hip) + "  " + one_piece.hip.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:body_length) + "  " + one_piece.body_length.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:sleeve_length) + "  " + one_piece.sleeve_length.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:sleeve_width) + "  " + one_piece.sleeve_width.to_s + "cm"
           "\n"
         end
       else
@@ -98,12 +98,12 @@ class LineBotController < ApplicationController
         @outers.each do |outer|
           text <<
           Outers.title + "\n" +
-          Outers.human_attribute_name(:neck) + ":" + outer.neck.to_s + "cm" + "\n" +
-          Outers.human_attribute_name(:shoulder_width) + ":" + outer.shoulder_width.to_s + "cm" + "\n" +
-          Outers.human_attribute_name(:body_width) + ":" + outer.body_width.to_s + "cm" + "\n" +
-          Outers.human_attribute_name(:body_length) + ":" + outer.body_length.to_s + "cm" + "\n" +
-          Outers.human_attribute_name(:sleeve_length) + ":" + outer.sleeve_length.to_s + "cm" + "\n" +
-          Outers.human_attribute_name(:sleeve_width) + ":" + outer.sleeve_width.to_s + "cm"
+          Outers.human_attribute_name(:neck) + "  " + outer.neck.to_s + "cm" + "\n" +
+          Outers.human_attribute_name(:shoulder_width) + "  " + outer.shoulder_width.to_s + "cm" + "\n" +
+          Outers.human_attribute_name(:body_width) + "  " + outer.body_width.to_s + "cm" + "\n" +
+          Outers.human_attribute_name(:body_length) + "  " + outer.body_length.to_s + "cm" + "\n" +
+          Outers.human_attribute_name(:sleeve_length) + "  " + outer.sleeve_length.to_s + "cm" + "\n" +
+          Outers.human_attribute_name(:sleeve_width) + "  " + outer.sleeve_width.to_s + "cm"
           "\n"
         end
       else
@@ -117,7 +117,7 @@ class LineBotController < ApplicationController
         @hats.each do |hat|
           text <<
           Hat.title + "\n" +
-          Hat.human_attribute_name(:head_circumference) + ":" + hat.head_circumference.to_s + "cm"
+          Hat.human_attribute_name(:head_circumference) + "  " + hat.head_circumference.to_s + "cm"
           "\n"
         end
       else
@@ -131,7 +131,7 @@ class LineBotController < ApplicationController
         @rings.each do |hat|
           text <<
           Ring.title + "\n" +
-          Ring.human_attribute_name(:finger_circumference) + ":" + ring.finger_circumference.to_s + "cm"
+          Ring.human_attribute_name(:finger_circumference) + "  " + ring.finger_circumference.to_s + "cm"
           "\n"
         end
       else
@@ -145,10 +145,10 @@ class LineBotController < ApplicationController
         @underwears.each do |underwear|
           text <<
           Underwear.title + "\n" +
-          Underwear.human_attribute_name(:top_bust) + ":" + underwear.top_bust.to_s + "cm" + "\n" +
-          Underwear.human_attribute_name(:under_bust) + ":" + underwear.under_bust.to_s + "cm" + "\n" +
-          Underwear.human_attribute_name(:waist) + ":" + underwear.waist.to_s + "cm" + "\n" +
-          Underwear.human_attribute_name(:hip) + ":" + underwear.hip.to_s + "cm"
+          Underwear.human_attribute_name(:top_bust) + "  " + underwear.top_bust.to_s + "cm" + "\n" +
+          Underwear.human_attribute_name(:under_bust) + "  " + underwear.under_bust.to_s + "cm" + "\n" +
+          Underwear.human_attribute_name(:waist) + "  " + underwear.waist.to_s + "cm" + "\n" +
+          Underwear.human_attribute_name(:hip) + "  " + underwear.hip.to_s + "cm"
           "\n"
         end
       else
@@ -156,8 +156,8 @@ class LineBotController < ApplicationController
       end
     end
     message = {
-        type: 'text',
-        text: text
+      type: 'text',
+      text: text
     }
   end
 end
