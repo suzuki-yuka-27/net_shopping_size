@@ -9,12 +9,19 @@ class LineBotController < ApplicationController
     end
     events = client.parse_events_from(body)
     events.each do |event|
+      @message = event.message['text'].gsub(" ", "") 
       case event
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
-          message = search_and_create_message(event.message['text'])
-          client.reply_message(event['replyToken'], message)
+          case @message
+          when "Tops", "Bottoms", "One Pieces", "Outers", "Hats", "Rings", "Underwears"
+            message = search_and_create_message(@message)
+            client.reply_message(event['replyToken'], message)
+          else
+            message = first_reply
+            client.reply_message(event['replyToken'], message)
+          end
         end
       end
     end
@@ -31,12 +38,12 @@ class LineBotController < ApplicationController
   end
 
   def search_and_create_message(keyword)
-    if keyword == "tops"
+    if keyword == "Tops"
       @tops = Top.all.order(created_at: :desc)
       if @tops.present?
         text = ''
         @tops.each do |top|
-          text <<
+          text  <<
           top.title + "\n" +
           Top.human_attribute_name(:neck) + "  " + top.neck.to_s + "cm" + "\n" +
           Top.human_attribute_name(:shoulder_width) +  "  " + top.shoulder_width.to_s + "cm" + "\n" +
@@ -50,7 +57,7 @@ class LineBotController < ApplicationController
         text = "トップスのサイズが記録されていません"
       end
 
-    elsif keyword == "bottoms"
+    elsif keyword == "Bottoms"
       @bottoms = Bottom.all.order(created_at: :desc)
       if @bottoms.present?
         text = ''
@@ -70,13 +77,13 @@ class LineBotController < ApplicationController
         text = "ボトムスのサイズが記録されていません"
       end
 
-    elsif keyword == "one_pieces"
+    elsif keyword == "One Pieces"
       @one_pieces = OnePiece.all.order(created_at: :desc)
       if @one_pieces.present?
         text = ''
         @one_pieces.each do |one_piece|
           text <<
-          OnePiece.title + "\n" +
+          one_piece.title + "\n" +
           OnePiece.human_attribute_name(:neck) + "  " + one_piece.neck.to_s + "cm" + "\n" +
           OnePiece.human_attribute_name(:shoulder_width) + "  " + one_piece.shoulder_width.to_s + "cm" + "\n" +
           OnePiece.human_attribute_name(:bust) + "  " + one_piece.bust.to_s + "cm" + "\n" +
@@ -91,13 +98,13 @@ class LineBotController < ApplicationController
         text = "ワンピースのサイズが記録されていません"
       end
 
-    elsif keyword == "outers"
+    elsif keyword == "Outers"
       @outers = Outer.all.order(created_at: :desc)
       if @outers.present?
         text = ''
         @outers.each do |outer|
           text <<
-          Outers.title + "\n" +
+          outers.title + "\n" +
           Outers.human_attribute_name(:neck) + "  " + outer.neck.to_s + "cm" + "\n" +
           Outers.human_attribute_name(:shoulder_width) + "  " + outer.shoulder_width.to_s + "cm" + "\n" +
           Outers.human_attribute_name(:body_width) + "  " + outer.body_width.to_s + "cm" + "\n" +
@@ -110,13 +117,13 @@ class LineBotController < ApplicationController
         text = "アウターのサイズが記録されていません"
       end
 
-    elsif keyword == "hats"
+    elsif keyword == "Hats"
       @hats = Hat.all.order(created_at: :desc)
       if @hats.present?
         text = ''
         @hats.each do |hat|
           text <<
-          Hat.title + "\n" +
+          hat.title + "\n" +
           Hat.human_attribute_name(:head_circumference) + "  " + hat.head_circumference.to_s + "cm"
           "\n"
         end
@@ -124,13 +131,13 @@ class LineBotController < ApplicationController
         text = "帽子のサイズが記録されていません"
       end
 
-    elsif keyword == "rings"
+    elsif keyword == "Rings"
       @rings = Ring.all.order(created_at: :desc)
       if @rings.present?
         text = ''
         @rings.each do |hat|
           text <<
-          Ring.title + "\n" +
+          ring.title + "\n" +
           Ring.human_attribute_name(:finger_circumference) + "  " + ring.finger_circumference.to_s + "cm"
           "\n"
         end
@@ -138,13 +145,13 @@ class LineBotController < ApplicationController
         text = "指輪のサイズが記録されていません"
       end
 
-    elsif keyword == "underwears"
+    elsif keyword == "Underwears"
       @underwears = Underwear.all.order(created_at: :desc)
       if @underwears.present?
         text = ''
         @underwears.each do |underwear|
           text <<
-          Underwear.title + "\n" +
+          underwear.title + "\n" +
           Underwear.human_attribute_name(:top_bust) + "  " + underwear.top_bust.to_s + "cm" + "\n" +
           Underwear.human_attribute_name(:under_bust) + "  " + underwear.under_bust.to_s + "cm" + "\n" +
           Underwear.human_attribute_name(:waist) + "  " + underwear.waist.to_s + "cm" + "\n" +
@@ -158,6 +165,80 @@ class LineBotController < ApplicationController
     message = {
       type: 'text',
       text: text
+    }
+  end
+
+  def first_reply
+    {
+      "type": "text",
+      "text": "どのジャンルのサイズを探してる？",
+      "quickReply": {
+        "items": [
+          {
+            "type": "action",
+            "imageUrl": "https://example.com/assets/stamp_tops.png",
+            "action": {
+              "type": "message",
+              "label": "Tops",
+              "text": "Tops"
+            }
+          },
+          {
+            "type": "action",
+            "imageUrl": "https://example.com/assets/stamp_bottoms.png",
+            "action": {
+              "type": "message",
+              "label": "Bottoms",
+              "text": "Bottoms"
+            }
+          },
+          {
+            "type": "action",
+            "imageUrl": "https://example.com/assets/stamp_one_pieces.png",
+            "action": {
+              "type": "message",
+              "label": "One Pieces",
+              "text": "One Pieces"
+            }
+          },
+          {
+            "type": "action",
+            "imageUrl": "https://example.com/assets/stamp_outers.png",
+            "action": {
+              "type": "message",
+              "label": "Outers",
+              "text": "Outers"
+            }
+          },
+          {
+            "type": "action",
+            "imageUrl": "https://example.com/assets/stamp_hats.png",
+            "action": {
+              "type": "message",
+              "label": "Hats",
+              "text": "Hats"
+            }
+          },
+          {
+            "type": "action",
+            "imageUrl": "https://example.com/assets/stamp_rings.png",
+            "action": {
+              "type": "message",
+              "label": "Rings",
+              "text": "Rings"
+            }
+          },
+          {
+            "type": "action",
+            "imageUrl": "https://example.com/assets/stamp_underwears.png",
+            "action": {
+              "type": "message",
+              "label": "Underwears",
+              "text": "Underwears"
+            }
+          },
+        ]
+      }
     }
   end
 end
