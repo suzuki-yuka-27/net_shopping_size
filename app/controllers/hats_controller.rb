@@ -1,18 +1,14 @@
 class HatsController < ApplicationController
-  before_action :set_hat, only: %i[show edit update destroy]
-
-  def index
-    @hats = Hat.all.order(created_at: :desc)
-  end
+  before_action :set_hat, only: %i[show edit update]
 
   def new
     @hat = Hat.new
   end
 
   def create
-    @hat = current_user.hats.build(hat_params)
+    @hat = current_user.build_hat(hat_params)
     if @hat.save
-      redirect_to hats_path, success: t('defaults.record_size')
+      redirect_to @hat, success: t('defaults.record_size')
     else
       flash.now[:danger] = t('defaults.not_record_size')
       render :new
@@ -25,25 +21,20 @@ class HatsController < ApplicationController
 
   def update
     if @hat.update(hat_params)
-      redirect_to hats_path, success: t('defaults.update_size')
+      redirect_to @hat, success: t('defaults.update_size')
     else
       flash.now[:danger] = t('defaults.not_update_size')
       render :edit
     end
   end
 
-  def destroy
-    @hat.destroy!
-    redirect_to hats_path, success: t('defaults.delete_size')
-  end
-
   private
 
   def hat_params
-    params.require(:hat).permit(:title, :head_circumference)
+    params.require(:hat).permit(:head_circumference)
   end
 
   def set_hat
-    @hat = current_user.hats.find(params[:id])
+    @hat = User.find(current_user.id).outer
   end
 end
