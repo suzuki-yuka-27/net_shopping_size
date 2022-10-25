@@ -1,6 +1,7 @@
 class CreateBottoms < ActiveRecord::Migration[7.0]
   def change
     create_table :bottoms do |t|
+      t.string :title, null: false
       t.float :waist, null: false
       t.float :hip, null: false
       t.float :rising_length, null: false

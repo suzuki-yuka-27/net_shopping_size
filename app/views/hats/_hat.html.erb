@@ -1,25 +1,18 @@
-<div class="overflow-x-auto shadow-md">
-  <table class="w-full text-sm text-center border border-black">
-    <thead class="text-xs bg-gray-300 border-b border-black uppercase">
-      <tr>
-        <th scope="col" class="py-3 px-6">
-          <%= t('defaults.body_parts') %>
-        </th>
-        <th scope="col" class="py-3 px-6">
-          <%= t('defaults.size') %>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="bg-white border-b">
-        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-          <%= Hat.human_attribute_name(:head_circumference) %>
-        </th>
-        <td class="flex flex-row py-4 px-6">
-          <%= hat.head_circumference %>
-          <p>cm</p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class= "flex flex-col items-center">
+  <%= image_tag 'card.hunger', size: '200x200' %>
+  <div class= "block p-6 mx-10 w-72 bg-black shadow-md">
+    <div class= "flex justify-center mb-7 px-5 text-xl font-bold tracking-tight text-white hover:cursor-pointer ">
+      <%= link_to hat_path(hat) do %>
+        <%= hat.title %>
+      <% end %>
+    </div>
+    <div class= "flex flex-row justify-end gap-5">
+      <div class= "underline decoration-solid text-white font-semibold">
+        <%= link_to 'Edit', edit_hat_path(hat) %>
+      </div>
+      <div class= "underline decoration-solid text-white font-semibold">
+        <%= button_to 'Delete', hat_path(hat), method: :delete %>
+      </div>
+    </div>
+  </div>
 </div>
