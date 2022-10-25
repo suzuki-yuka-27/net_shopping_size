@@ -1,4 +1,5 @@
 class UnderwearsController < ApplicationController
+  before_action :saved_underwear, only: %i[new]
   before_action :set_underwear, only: %i[show edit update]
 
   def new
@@ -36,5 +37,12 @@ class UnderwearsController < ApplicationController
 
   def set_underwear
     @underwear = User.find(current_user.id).underwear
+  end
+
+  def saved_underwear
+    @underwear = User.find(current_user.id).underwear
+    if @underwear
+      redirect_to @underwear
+    end
   end
 end

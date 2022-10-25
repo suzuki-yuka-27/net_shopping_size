@@ -1,4 +1,5 @@
 class RingsController < ApplicationController
+  before_action :saved_ring, only: %i[new]
   before_action :set_ring, only: %i[show edit update]
 
   def new
@@ -36,5 +37,12 @@ class RingsController < ApplicationController
 
   def set_ring
     @ring = User.find(current_user.id).ring
+  end
+
+  def saved_ring
+    @ring = User.find(current_user.id).ring
+    if @ring
+      redirect_to @ring
+    end
   end
 end

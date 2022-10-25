@@ -1,4 +1,5 @@
 class HatsController < ApplicationController
+  before_action :saved_hat, only: %i[new]
   before_action :set_hat, only: %i[show edit update]
 
   def new
@@ -36,5 +37,12 @@ class HatsController < ApplicationController
 
   def set_hat
     @hat = User.find(current_user.id).outer
+  end
+
+  def saved_hat
+    @hat = User.find(current_user.id).hat
+    if @hat
+      redirect_to @hat
+    end
   end
 end

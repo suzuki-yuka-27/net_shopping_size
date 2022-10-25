@@ -1,4 +1,5 @@
 class OnePiecesController < ApplicationController
+  before_action :saved_one_piece, only: %i[new]
   before_action :set_one_piece, only: %i[show edit update]
 
   def new
@@ -36,5 +37,12 @@ class OnePiecesController < ApplicationController
 
   def set_one_piece
     @one_piece = User.find(current_user.id).one_piece
+  end
+
+  def saved_one_piece
+    @one_piece = User.find(current_user.id).one_piece
+    if @one_piece
+      redirect_to @one_piece
+    end
   end
 end

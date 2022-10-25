@@ -1,4 +1,5 @@
 class OutersController < ApplicationController
+  before_action :saved_outer, only: %i[new]
   before_action :set_outer, only: %i[show edit update]
 
   def new
@@ -36,5 +37,12 @@ class OutersController < ApplicationController
 
   def set_outer
     @outer = User.find(current_user.id).outer
+  end
+
+  def saved_outer
+    @outer = User.find(current_user.id).outer
+    if @outer
+      redirect_to @outer
+    end
   end
 end

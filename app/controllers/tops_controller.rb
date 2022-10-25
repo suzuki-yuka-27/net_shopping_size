@@ -1,4 +1,5 @@
 class TopsController < ApplicationController
+  before_action :saved_top, only: %i[new]
   before_action :set_top, only: %i[show edit update]
 
   def new
@@ -36,5 +37,12 @@ class TopsController < ApplicationController
 
   def set_top
     @top = User.find(current_user.id).top
+  end
+
+  def saved_top
+    @top = User.find(current_user.id).top
+    if @top
+      redirect_to @top
+    end
   end
 end
