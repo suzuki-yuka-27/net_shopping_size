@@ -1,0 +1,25 @@
+<div class="overflow-x-auto shadow-md">
+  <table class="w-full text-sm text-center border border-black">
+    <thead class="text-xs bg-gray-300 border-b border-black uppercase">
+      <tr>
+        <th scope="col" class="py-3 px-6">
+          <%= t('defaults.body_parts') %>
+        </th>
+        <th scope="col" class="py-3 px-6">
+          <%= t('defaults.size') %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-white border-b">
+        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+          <%= Ring.human_attribute_name(:finger_circumference) %>
+        </th>
+        <td class="flex flex-row py-4 px-6">
+          <%= ring.finger_circumference %>
+          <p>cm</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,70 @@
+<div class="overflow-x-auto shadow-md">
+  <table class="w-full text-sm text-center border border-black">
+    <thead class="text-xs bg-gray-300 border-b border-black uppercase">
+      <tr>
+        <th scope="col" class="py-3 px-6">
+          <%= t('defaults.body_parts') %>
+        </th>
+        <th scope="col" class="py-3 px-6">
+          <%= t('defaults.size') %>
+          </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-white border-b">
+        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+          <%= Top.human_attribute_name(:neck) %>
+        </th>
+        <td class="flex flex-row py-4 px-6">
+          <%= top.neck %>
+          <p>cm</p>
+        </td>
+      </tr>
+      <tr class="bg-gray-200 border-b">
+        <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap">
+          <%= Top.human_attribute_name(:shoulder_width) %>
+        </th>
+        <td class="flex flex-row py-4 px-6">
+          <%= top.shoulder_width %>
+          <p>cm</p>
+        </td>
+      </tr>
+      <tr class="bg-white border-b">
+        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+          <%= Top.human_attribute_name(:body_width) %>
+        </th>
+        <td class="flex flex-row py-4 px-6">
+          <%= top.body_width %>
+          <p>cm</p>
+        </td>
+      </tr>
+      <tr class="bg-gray-200 border-b">
+        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+          <%= Top.human_attribute_name(:body_length) %>
+        </th>
+        <td class="flex flex-row py-4 px-6">
+          <%= top.body_length %>
+          <p>cm</p>
+        </td>
+      </tr>
+      <tr class="bg-white border-b">
+        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
+          <%= Top.human_attribute_name(:sleeve_length) %>
+        </th>
+        <td class="flex flex-row py-4 px-6">
+          <%= top.sleeve_length %>
+          <p>cm</p>
+        </td>
+      </tr>
+      <tr class="bg-gray-200">
+        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
+          <%= Top.human_attribute_name(:sleeve_width) %>
+        </th>
+        <td class="flex flex-row py-4 px-6">
+          <%= top.sleeve_width %>
+          <p>cm</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
