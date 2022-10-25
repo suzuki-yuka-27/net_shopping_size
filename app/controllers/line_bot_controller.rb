@@ -9,19 +9,12 @@ class LineBotController < ApplicationController
     end
     events = client.parse_events_from(body)
     events.each do |event|
-      @message = event.message['text'].gsub(" ", "") 
       case event
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
-          case @message
-          when "Tops", "Bottoms", "One Pieces", "Outers", "Hats", "Rings", "Underwears"
-            message = search_and_create_message(@message)
-            client.reply_message(event['replyToken'], message)
-          else
-            message = first_reply
-            client.reply_message(event['replyToken'], message)
-          end
+          message = search_and_create_message(event.message['text'])
+          client.reply_message(event['replyToken'], message)
         end
       end
     end
@@ -38,179 +31,133 @@ class LineBotController < ApplicationController
   end
 
   def search_and_create_message(keyword)
-    if keyword == "Tops"
-      top = User.find(current_user.id).top
-      if top.present?
+    if keyword == "tops"
+      @tops = Top.all.order(created_at: :desc)
+      if @tops.present?
         text = ''
-        text  <<
-        Top.human_attribute_name(:neck) + "  " + top.neck.to_s + "cm" + "\n" +
-        Top.human_attribute_name(:shoulder_width) +  "  " + top.shoulder_width.to_s + "cm" + "\n" +
-        Top.human_attribute_name(:body_width) + "  " + top.body_width.to_s+ "cm" + "\n" +
-        Top.human_attribute_name(:body_length) + "  " + top.body_length.to_s + "cm" + "\n" +
-        Top.human_attribute_name(:sleeve_length) + "  " + top.sleeve_length.to_s + "cm" + "\n" +
-        Top.human_attribute_name(:sleeve_width) + "  " + top.sleeve_width.to_s + "cm"
+        @tops.each do |top|
+          text <<
+          top.title + "\n" +
+          Top.human_attribute_name(:neck) + ":" + top.neck.to_s + "cm" + "\n" +
+          Top.human_attribute_name(:shoulder_width) +  ":" + top.shoulder_width.to_s + "cm" + "\n" +
+          Top.human_attribute_name(:body_width) + ":" + top.body_width.to_s+ "cm" + "\n" +
+          Top.human_attribute_name(:body_length) + ":" + top.body_length.to_s + "cm" + "\n" +
+          Top.human_attribute_name(:sleeve_length) + ":" + top.sleeve_length.to_s + "cm" + "\n" +
+          Top.human_attribute_name(:sleeve_width) + ":" + top.sleeve_width.to_s + "cm" + "\n" +
+          "\n"
+        end
       else
         text = "トップスのサイズが記録されていません"
       end
 
-    elsif keyword == "Bottoms"
-      bottom = User.find(current_user.id).bottom
-      if bottom.present?
+    elsif keyword == "bottoms"
+      @bottoms = Bottom.all.order(created_at: :desc)
+      if @bottoms.present?
         text = ''
-        text <<
-        Bottom.human_attribute_name(:waist) + "  " + bottom.waist.to_s + "cm" + "\n" +
-        Bottom.human_attribute_name(:hip) + "  " + bottom.hip.to_s + "cm" + "\n" +
-        Bottom.human_attribute_name(:rising_length) + "  " + bottom.rising_length.to_s + "cm" + "\n" +
-        Bottom.human_attribute_name(:inseam) + "  " + bottom.inseam.to_s + "cm" + "\n" +
-        Bottom.human_attribute_name(:total_length) + "  " + bottom.total_length.to_s + "cm" + "\n" +
-        Bottom.human_attribute_name(:thickness_of_thigh) + "  " + bottom.thickness_of_thigh.to_s + "cm" + "\n" +
-        Bottom.human_attribute_name(:bottom_width) + "  " + bottom.bottom_width.to_s + "cm"
+        @bottoms.each do |bottom|
+          text <<
+          bottom.title + "\n" +
+          Bottom.human_attribute_name(:waist) + ":" + bottom.waist.to_s + "cm" + "\n" +
+          Bottom.human_attribute_name(:hip) + ":" + bottom.hip.to_s + "cm" + "\n" +
+          Bottom.human_attribute_name(:rising_length) + ":" + bottom.rising_length.to_s + "cm" + "\n" +
+          Bottom.human_attribute_name(:inseam) + ":" + bottom.inseam.to_s + "cm" + "\n" +
+          Bottom.human_attribute_name(:total_length) + ":" + bottom.total_length.to_s + "cm" + "\n" +
+          Bottom.human_attribute_name(:thickness_of_thigh) + ":" + bottom.thickness_of_thigh.to_s + "cm" + "\n" +
+          Bottom.human_attribute_name(:bottom_width) + ":" + bottom.bottom_width.to_s + "cm"
+          "\n"
+        end
       else
         text = "ボトムスのサイズが記録されていません"
       end
 
-    elsif keyword == "One Pieces"
-      one_piece = User.find(current_user.id).one_piece
-      if one_piece.present?
+    elsif keyword == "one_pieces"
+      @one_pieces = OnePiece.all.order(created_at: :desc)
+      if @one_pieces.present?
         text = ''
-        text <<
-        OnePiece.human_attribute_name(:neck) + "  " + one_piece.neck.to_s + "cm" + "\n" +
-        OnePiece.human_attribute_name(:shoulder_width) + "  " + one_piece.shoulder_width.to_s + "cm" + "\n" +
-        OnePiece.human_attribute_name(:bust) + "  " + one_piece.bust.to_s + "cm" + "\n" +
-        OnePiece.human_attribute_name(:waist) + "  " + one_piece.waist.to_s + "cm" + "\n" +
-        OnePiece.human_attribute_name(:hip) + "  " + one_piece.hip.to_s + "cm" + "\n" +
-        OnePiece.human_attribute_name(:body_length) + "  " + one_piece.body_length.to_s + "cm" + "\n" +
-        OnePiece.human_attribute_name(:sleeve_length) + "  " + one_piece.sleeve_length.to_s + "cm" + "\n" +
-        OnePiece.human_attribute_name(:sleeve_width) + "  " + one_piece.sleeve_width.to_s + "cm"
+        @one_pieces.each do |one_piece|
+          text <<
+          OnePiece.title + "\n" +
+          OnePiece.human_attribute_name(:neck) + ":" + one_piece.neck.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:shoulder_width) + ":" + one_piece.shoulder_width.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:bust) + ":" + one_piece.bust.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:waist) + ":" + one_piece.waist.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:hip) + ":" + one_piece.hip.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:body_length) + ":" + one_piece.body_length.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:sleeve_length) + ":" + one_piece.sleeve_length.to_s + "cm" + "\n" +
+          OnePiece.human_attribute_name(:sleeve_width) + ":" + one_piece.sleeve_width.to_s + "cm"
+          "\n"
+        end
       else
         text = "ワンピースのサイズが記録されていません"
       end
 
-    elsif keyword == "Outers"
-      outer = User.find(current_user.id).outer
-      if outer.present?
+    elsif keyword == "outers"
+      @outers = Outer.all.order(created_at: :desc)
+      if @outers.present?
         text = ''
-        text <<
-        Outers.human_attribute_name(:neck) + "  " + outer.neck.to_s + "cm" + "\n" +
-        Outers.human_attribute_name(:shoulder_width) + "  " + outer.shoulder_width.to_s + "cm" + "\n" +
-        Outers.human_attribute_name(:body_width) + "  " + outer.body_width.to_s + "cm" + "\n" +
-        Outers.human_attribute_name(:body_length) + "  " + outer.body_length.to_s + "cm" + "\n" +
-        Outers.human_attribute_name(:sleeve_length) + "  " + outer.sleeve_length.to_s + "cm" + "\n" +
-        Outers.human_attribute_name(:sleeve_width) + "  " + outer.sleeve_width.to_s + "cm"
+        @outers.each do |outer|
+          text <<
+          Outers.title + "\n" +
+          Outers.human_attribute_name(:neck) + ":" + outer.neck.to_s + "cm" + "\n" +
+          Outers.human_attribute_name(:shoulder_width) + ":" + outer.shoulder_width.to_s + "cm" + "\n" +
+          Outers.human_attribute_name(:body_width) + ":" + outer.body_width.to_s + "cm" + "\n" +
+          Outers.human_attribute_name(:body_length) + ":" + outer.body_length.to_s + "cm" + "\n" +
+          Outers.human_attribute_name(:sleeve_length) + ":" + outer.sleeve_length.to_s + "cm" + "\n" +
+          Outers.human_attribute_name(:sleeve_width) + ":" + outer.sleeve_width.to_s + "cm"
+          "\n"
+        end
       else
         text = "アウターのサイズが記録されていません"
       end
 
-    elsif keyword == "Hats"
-      hat = User.find(current_user.id).hat
-      if hat.present?
+    elsif keyword == "hats"
+      @hats = Hat.all.order(created_at: :desc)
+      if @hats.present?
         text = ''
-        text <<
-        Hat.human_attribute_name(:head_circumference) + "  " + hat.head_circumference.to_s + "cm"
+        @hats.each do |hat|
+          text <<
+          Hat.title + "\n" +
+          Hat.human_attribute_name(:head_circumference) + ":" + hat.head_circumference.to_s + "cm"
+          "\n"
+        end
       else
         text = "帽子のサイズが記録されていません"
       end
 
-    elsif keyword == "Rings"
-      ring = User.find(current_user.id).ring
-      if ring.present?
+    elsif keyword == "rings"
+      @rings = Ring.all.order(created_at: :desc)
+      if @rings.present?
         text = ''
-        text <<
-        Ring.human_attribute_name(:finger_circumference) + "  " + ring.finger_circumference.to_s + "cm"
+        @rings.each do |hat|
+          text <<
+          Ring.title + "\n" +
+          Ring.human_attribute_name(:finger_circumference) + ":" + ring.finger_circumference.to_s + "cm"
+          "\n"
+        end
       else
         text = "指輪のサイズが記録されていません"
       end
 
-    elsif keyword == "Underwears"
-      underwear = User.find(current_user.id).underwear
-      if underwear.present?
+    elsif keyword == "underwears"
+      @underwears = Underwear.all.order(created_at: :desc)
+      if @underwears.present?
         text = ''
-        text <<
-        Underwear.human_attribute_name(:top_bust) + "  " + underwear.top_bust.to_s + "cm" + "\n" +
-        Underwear.human_attribute_name(:under_bust) + "  " + underwear.under_bust.to_s + "cm" + "\n" +
-        Underwear.human_attribute_name(:waist) + "  " + underwear.waist.to_s + "cm" + "\n" +
-        Underwear.human_attribute_name(:hip) + "  " + underwear.hip.to_s + "cm"
+        @underwears.each do |underwear|
+          text <<
+          Underwear.title + "\n" +
+          Underwear.human_attribute_name(:top_bust) + ":" + underwear.top_bust.to_s + "cm" + "\n" +
+          Underwear.human_attribute_name(:under_bust) + ":" + underwear.under_bust.to_s + "cm" + "\n" +
+          Underwear.human_attribute_name(:waist) + ":" + underwear.waist.to_s + "cm" + "\n" +
+          Underwear.human_attribute_name(:hip) + ":" + underwear.hip.to_s + "cm"
+          "\n"
+        end
       else
         text = "下着のサイズが記録されていません"
       end
     end
     message = {
-      type: 'text',
-      text: text
-    }
-  end
-
-  def first_reply
-    {
-      "type": "text",
-      "text": "どのジャンルのサイズを探してる？",
-      "quickReply": {
-        "items": [
-          {
-            "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_tops.png",
-            "action": {
-              "type": "message",
-              "label": "Tops",
-              "text": "Tops"
-            }
-          },
-          {
-            "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_bottoms.png",
-            "action": {
-              "type": "message",
-              "label": "Bottoms",
-              "text": "Bottoms"
-            }
-          },
-          {
-            "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_one_pieces.png",
-            "action": {
-              "type": "message",
-              "label": "One Pieces",
-              "text": "One Pieces"
-            }
-          },
-          {
-            "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_outers.png",
-            "action": {
-              "type": "message",
-              "label": "Outers",
-              "text": "Outers"
-            }
-          },
-          {
-            "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_hats.png",
-            "action": {
-              "type": "message",
-              "label": "Hats",
-              "text": "Hats"
-            }
-          },
-          {
-            "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_rings.png",
-            "action": {
-              "type": "message",
-              "label": "Rings",
-              "text": "Rings"
-            }
-          },
-          {
-            "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_underwears.png",
-            "action": {
-              "type": "message",
-              "label": "Underwears",
-              "text": "Underwears"
-            }
-          },
-        ]
-      }
+        type: 'text',
+        text: text
     }
   end
 end

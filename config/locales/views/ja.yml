@@ -14,7 +14,9 @@ ja:
     record_size:  'サイズを記録しました。'
     not_record_size:  'サイズを記録できませんでした。'
     update_size:  'サイズを更新しました。'
+    delete_size:  '記録したサイズを削除しました。'
     not_update_size:  'サイズを更新できませんでした。'
+    no_size:  'まだサイズが記録されていません。'
     errors:  '以下の要件を満たしていません。'
   significant:
     copyright:  '©️2022 クロササイズ'

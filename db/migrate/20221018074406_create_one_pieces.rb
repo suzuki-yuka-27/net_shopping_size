@@ -1,6 +1,7 @@
 class CreateOnePieces < ActiveRecord::Migration[7.0]
   def change
     create_table :one_pieces do |t|
+      t.string :title, null: false
       t.float :neck, null:false
       t.float :shoulder_width, null: false
       t.float :bust, null: false

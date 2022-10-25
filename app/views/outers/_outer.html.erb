@@ -1,70 +1,18 @@
-<div class="overflow-x-auto shadow-md">
-  <table class="w-full text-sm text-center border border-black">
-    <thead class="text-xs bg-gray-300 border-b border-black uppercase">
-      <tr>
-        <th scope="col" class="py-3 px-6">
-          <%= t('defaults.body_parts') %>
-        </th>
-        <th scope="col" class="py-3 px-6">
-          <%= t('defaults.size') %>
-          </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="bg-white border-b">
-        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-          <%= Outer.human_attribute_name(:neck) %>
-        </th>
-        <td class="flex flex-row py-4 px-6">
-          <%= outer.neck %>
-          <p>cm</p>
-        </td>
-      </tr>
-      <tr class="bg-gray-200 border-b">
-        <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap">
-          <%= Outer.human_attribute_name(:shoulder_width) %>
-        </th>
-        <td class="flex flex-row py-4 px-6">
-          <%= outer.shoulder_width %>
-          <p>cm</p>
-        </td>
-      </tr>
-      <tr class="bg-white border-b">
-        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-          <%= Outer.human_attribute_name(:body_width) %>
-        </th>
-        <td class="flex flex-row py-4 px-6">
-          <%= outer.body_width %>
-          <p>cm</p>
-        </td>
-      </tr>
-      <tr class="bg-gray-200 border-b">
-        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-          <%= Outer.human_attribute_name(:body_length) %>
-        </th>
-        <td class="flex flex-row py-4 px-6">
-          <%= outer.body_length %>
-          <p>cm</p>
-        </td>
-      </tr>
-      <tr class="bg-white border-b">
-        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
-          <%= Outer.human_attribute_name(:sleeve_length) %>
-        </th>
-        <td class="flex flex-row py-4 px-6">
-          <%= outer.sleeve_length %>
-          <p>cm</p>
-        </td>
-      </tr>
-      <tr class="bg-gray-200">
-        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
-          <%= Outer.human_attribute_name(:sleeve_width) %>
-        </th>
-        <td class="flex flex-row py-4 px-6">
-          <%= outer.sleeve_width %>
-          <p>cm</p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class= "flex flex-col items-center">
+  <%= image_tag 'card.hunger', size: '200x200' %>
+  <div class= "block p-6 mx-10 w-72 bg-black shadow-md">
+    <div class= "flex justify-center mb-7 px-5 text-xl font-bold tracking-tight text-white hover:cursor-pointer ">
+      <%= link_to outer_path(outer) do %>
+        <%= outer.title %>
+      <% end %>
+    </div>
+    <div class= "flex flex-row justify-end gap-5">
+      <div class= "underline decoration-solid text-white font-semibold">
+        <%= link_to 'Edit', edit_outer_path(outer) %>
+      </div>
+      <div class= "underline decoration-solid text-white font-semibold">
+        <%= button_to 'Delete', outer_path(outer), method: :delete %>
+      </div>
+    </div>
+  </div>
 </div>
