@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   get 'line_login_api/callback', to: 'line_login_api#callback'
   post '/callback', to: 'line_bot#callback'
 
-  resources :tops
-  resources :bottoms
-  resources :hats
-  resources :rings
-  resources :one_pieces
-  resources :outers
-  resources :underwears
+  resource :top
+  resource :bottom
+  resource :hat
+  resource :ring
+  resource :one_piece
+  resource :outer
+  resource :underwear
 end

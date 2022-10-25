@@ -6,14 +6,8 @@
   <div class= "flex justify-center">
     <%= image_tag 'hats_guide_image.png', size: '350x350' %>
   </div>
-  <%= form_with model: hat, local: true do |f| %>
+  <%= form_with model: hat, url: hat_path, local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <div class= "flex flex-col items-center">
-      <%= f.label :title %>
-      <div class= "flex flex-row mb-5 shadow rounded text-gray-700">
-        <%= f.text_field :title, placeholder: Hat.human_attribute_name(:title), class: 'bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
-      </div>
-    </div>
     <div class= "flex justify-center gap-5 p-5">
       <div class= "flex flex-col items-center">
         <%= f.label :head_circumference %>
