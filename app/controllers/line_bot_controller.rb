@@ -39,125 +39,97 @@ class LineBotController < ApplicationController
 
   def search_and_create_message(keyword)
     if keyword == "Tops"
-      @tops = Top.all.order(created_at: :desc)
-      if @tops.present?
+      top = User.find(current_user.id).top
+      if top.present?
         text = ''
-        @tops.each do |top|
-          text  <<
-          top.title + "\n" +
-          Top.human_attribute_name(:neck) + "  " + top.neck.to_s + "cm" + "\n" +
-          Top.human_attribute_name(:shoulder_width) +  "  " + top.shoulder_width.to_s + "cm" + "\n" +
-          Top.human_attribute_name(:body_width) + "  " + top.body_width.to_s+ "cm" + "\n" +
-          Top.human_attribute_name(:body_length) + "  " + top.body_length.to_s + "cm" + "\n" +
-          Top.human_attribute_name(:sleeve_length) + "  " + top.sleeve_length.to_s + "cm" + "\n" +
-          Top.human_attribute_name(:sleeve_width) + "  " + top.sleeve_width.to_s + "cm" + "\n" +
-          "\n"
-        end
+        text  <<
+        Top.human_attribute_name(:neck) + "  " + top.neck.to_s + "cm" + "\n" +
+        Top.human_attribute_name(:shoulder_width) +  "  " + top.shoulder_width.to_s + "cm" + "\n" +
+        Top.human_attribute_name(:body_width) + "  " + top.body_width.to_s+ "cm" + "\n" +
+        Top.human_attribute_name(:body_length) + "  " + top.body_length.to_s + "cm" + "\n" +
+        Top.human_attribute_name(:sleeve_length) + "  " + top.sleeve_length.to_s + "cm" + "\n" +
+        Top.human_attribute_name(:sleeve_width) + "  " + top.sleeve_width.to_s + "cm"
       else
         text = "トップスのサイズが記録されていません"
       end
 
     elsif keyword == "Bottoms"
-      @bottoms = Bottom.all.order(created_at: :desc)
-      if @bottoms.present?
+      bottom = User.find(current_user.id).bottom
+      if bottom.present?
         text = ''
-        @bottoms.each do |bottom|
-          text <<
-          bottom.title + "\n" +
-          Bottom.human_attribute_name(:waist) + "  " + bottom.waist.to_s + "cm" + "\n" +
-          Bottom.human_attribute_name(:hip) + "  " + bottom.hip.to_s + "cm" + "\n" +
-          Bottom.human_attribute_name(:rising_length) + "  " + bottom.rising_length.to_s + "cm" + "\n" +
-          Bottom.human_attribute_name(:inseam) + "  " + bottom.inseam.to_s + "cm" + "\n" +
-          Bottom.human_attribute_name(:total_length) + "  " + bottom.total_length.to_s + "cm" + "\n" +
-          Bottom.human_attribute_name(:thickness_of_thigh) + "  " + bottom.thickness_of_thigh.to_s + "cm" + "\n" +
-          Bottom.human_attribute_name(:bottom_width) + "  " + bottom.bottom_width.to_s + "cm"
-          "\n"
-        end
+        text <<
+        Bottom.human_attribute_name(:waist) + "  " + bottom.waist.to_s + "cm" + "\n" +
+        Bottom.human_attribute_name(:hip) + "  " + bottom.hip.to_s + "cm" + "\n" +
+        Bottom.human_attribute_name(:rising_length) + "  " + bottom.rising_length.to_s + "cm" + "\n" +
+        Bottom.human_attribute_name(:inseam) + "  " + bottom.inseam.to_s + "cm" + "\n" +
+        Bottom.human_attribute_name(:total_length) + "  " + bottom.total_length.to_s + "cm" + "\n" +
+        Bottom.human_attribute_name(:thickness_of_thigh) + "  " + bottom.thickness_of_thigh.to_s + "cm" + "\n" +
+        Bottom.human_attribute_name(:bottom_width) + "  " + bottom.bottom_width.to_s + "cm"
       else
         text = "ボトムスのサイズが記録されていません"
       end
 
     elsif keyword == "One Pieces"
-      @one_pieces = OnePiece.all.order(created_at: :desc)
-      if @one_pieces.present?
+      one_piece = User.find(current_user.id).one_piece
+      if one_piece.present?
         text = ''
-        @one_pieces.each do |one_piece|
-          text <<
-          one_piece.title + "\n" +
-          OnePiece.human_attribute_name(:neck) + "  " + one_piece.neck.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:shoulder_width) + "  " + one_piece.shoulder_width.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:bust) + "  " + one_piece.bust.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:waist) + "  " + one_piece.waist.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:hip) + "  " + one_piece.hip.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:body_length) + "  " + one_piece.body_length.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:sleeve_length) + "  " + one_piece.sleeve_length.to_s + "cm" + "\n" +
-          OnePiece.human_attribute_name(:sleeve_width) + "  " + one_piece.sleeve_width.to_s + "cm"
-          "\n"
-        end
+        text <<
+        OnePiece.human_attribute_name(:neck) + "  " + one_piece.neck.to_s + "cm" + "\n" +
+        OnePiece.human_attribute_name(:shoulder_width) + "  " + one_piece.shoulder_width.to_s + "cm" + "\n" +
+        OnePiece.human_attribute_name(:bust) + "  " + one_piece.bust.to_s + "cm" + "\n" +
+        OnePiece.human_attribute_name(:waist) + "  " + one_piece.waist.to_s + "cm" + "\n" +
+        OnePiece.human_attribute_name(:hip) + "  " + one_piece.hip.to_s + "cm" + "\n" +
+        OnePiece.human_attribute_name(:body_length) + "  " + one_piece.body_length.to_s + "cm" + "\n" +
+        OnePiece.human_attribute_name(:sleeve_length) + "  " + one_piece.sleeve_length.to_s + "cm" + "\n" +
+        OnePiece.human_attribute_name(:sleeve_width) + "  " + one_piece.sleeve_width.to_s + "cm"
       else
         text = "ワンピースのサイズが記録されていません"
       end
 
     elsif keyword == "Outers"
-      @outers = Outer.all.order(created_at: :desc)
-      if @outers.present?
+      outer = User.find(current_user.id).outer
+      if outer.present?
         text = ''
-        @outers.each do |outer|
-          text <<
-          outers.title + "\n" +
-          Outers.human_attribute_name(:neck) + "  " + outer.neck.to_s + "cm" + "\n" +
-          Outers.human_attribute_name(:shoulder_width) + "  " + outer.shoulder_width.to_s + "cm" + "\n" +
-          Outers.human_attribute_name(:body_width) + "  " + outer.body_width.to_s + "cm" + "\n" +
-          Outers.human_attribute_name(:body_length) + "  " + outer.body_length.to_s + "cm" + "\n" +
-          Outers.human_attribute_name(:sleeve_length) + "  " + outer.sleeve_length.to_s + "cm" + "\n" +
-          Outers.human_attribute_name(:sleeve_width) + "  " + outer.sleeve_width.to_s + "cm"
-          "\n"
-        end
+        text <<
+        Outers.human_attribute_name(:neck) + "  " + outer.neck.to_s + "cm" + "\n" +
+        Outers.human_attribute_name(:shoulder_width) + "  " + outer.shoulder_width.to_s + "cm" + "\n" +
+        Outers.human_attribute_name(:body_width) + "  " + outer.body_width.to_s + "cm" + "\n" +
+        Outers.human_attribute_name(:body_length) + "  " + outer.body_length.to_s + "cm" + "\n" +
+        Outers.human_attribute_name(:sleeve_length) + "  " + outer.sleeve_length.to_s + "cm" + "\n" +
+        Outers.human_attribute_name(:sleeve_width) + "  " + outer.sleeve_width.to_s + "cm"
       else
         text = "アウターのサイズが記録されていません"
       end
 
     elsif keyword == "Hats"
-      @hats = Hat.all.order(created_at: :desc)
-      if @hats.present?
+      hat = User.find(current_user.id).hat
+      if hat.present?
         text = ''
-        @hats.each do |hat|
-          text <<
-          hat.title + "\n" +
-          Hat.human_attribute_name(:head_circumference) + "  " + hat.head_circumference.to_s + "cm"
-          "\n"
-        end
+        text <<
+        Hat.human_attribute_name(:head_circumference) + "  " + hat.head_circumference.to_s + "cm"
       else
         text = "帽子のサイズが記録されていません"
       end
 
     elsif keyword == "Rings"
-      @rings = Ring.all.order(created_at: :desc)
-      if @rings.present?
+      ring = User.find(current_user.id).ring
+      if ring.present?
         text = ''
-        @rings.each do |hat|
-          text <<
-          ring.title + "\n" +
-          Ring.human_attribute_name(:finger_circumference) + "  " + ring.finger_circumference.to_s + "cm"
-          "\n"
-        end
+        text <<
+        Ring.human_attribute_name(:finger_circumference) + "  " + ring.finger_circumference.to_s + "cm"
       else
         text = "指輪のサイズが記録されていません"
       end
 
     elsif keyword == "Underwears"
-      @underwears = Underwear.all.order(created_at: :desc)
-      if @underwears.present?
+      underwear = User.find(current_user.id).underwear
+      if underwear.present?
         text = ''
-        @underwears.each do |underwear|
-          text <<
-          underwear.title + "\n" +
-          Underwear.human_attribute_name(:top_bust) + "  " + underwear.top_bust.to_s + "cm" + "\n" +
-          Underwear.human_attribute_name(:under_bust) + "  " + underwear.under_bust.to_s + "cm" + "\n" +
-          Underwear.human_attribute_name(:waist) + "  " + underwear.waist.to_s + "cm" + "\n" +
-          Underwear.human_attribute_name(:hip) + "  " + underwear.hip.to_s + "cm"
-          "\n"
-        end
+        text <<
+        Underwear.human_attribute_name(:top_bust) + "  " + underwear.top_bust.to_s + "cm" + "\n" +
+        Underwear.human_attribute_name(:under_bust) + "  " + underwear.under_bust.to_s + "cm" + "\n" +
+        Underwear.human_attribute_name(:waist) + "  " + underwear.waist.to_s + "cm" + "\n" +
+        Underwear.human_attribute_name(:hip) + "  " + underwear.hip.to_s + "cm"
       else
         text = "下着のサイズが記録されていません"
       end
