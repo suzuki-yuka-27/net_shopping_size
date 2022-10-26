@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_19_113233) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_26_010850) do
   create_table "bottoms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
     t.float "waist", null: false
@@ -107,6 +107,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_113233) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "line_user_id", null: false
   end
 
   add_foreign_key "bottoms", "users"
