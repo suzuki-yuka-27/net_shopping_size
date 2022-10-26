@@ -14,4 +14,5 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   validates :email, presence: true
+  validates :line_user_id, presence: true, uniqueness: true
 end
