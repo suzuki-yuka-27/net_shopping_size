@@ -29,7 +29,7 @@ class LineLoginApiController < ApplicationController
 
       if user.save
         session[:user_id] = user.id
-        redirect_to after_login_path, success: t('.login')
+        redirect_to root_path, success: t('.login')
       else
         redirect_to root_path, danger: t('.not_login')
       end
