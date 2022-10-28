@@ -1,0 +1,137 @@
+<div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+  <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+      <li class="mr-2" role="presentation">
+        <button class="inline-block p-4 rounded-t-lg border-b-2" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+          TOPS
+        </button>
+      </li>
+      <li class="mr-2" role="presentation">
+        <button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">
+          BOTTOMS
+        </button>
+      </li>
+      <li class="mr-2" role="presentation">
+        <button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">
+          ONE PIECES
+        </button>
+      </li>
+      <li class="mr-2" role="presentation">
+        <button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">
+          OUTERS
+        </button>
+      </li>
+      <li class="mr-2" role="presentation">
+        <button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">
+          HATS
+        </button>
+      </li>
+      <li class="mr-2" role="presentation">
+        <button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">
+          RINGS
+        </button>
+      </li>
+      <li class="mr-2" role="presentation">
+        <button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">
+          UNDERWEARS
+        </button>
+      </li>
+  </ul>
+</div>
+<div id="myTabContent">
+  <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <% if @top.present? %>
+        <%= render 'tops/top', { top: @top } %>
+      <% else %>
+        <p>トップスのサイズは記録されていません</p>
+      <% end %>
+    </p>
+  </div>
+  <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <% if @bottom.present? %>
+        <%= render 'bottoms/bottom', { bottom: @bottom } %>
+      <% else %>
+        <p>ボトムスのサイズは記録されていません</p>
+      <% end %>
+    </p>
+  </div>
+  <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <% if @one_piece.present? %>
+        <%= render 'one_pieces/one_piece', { one_piece: @one_piece } %>
+      <% else %>
+        <p>ワンピースのサイズは記録されていません</p>
+      <% end %>
+    </p>
+  </div>
+  <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <% if @outer.present? %>
+        <%= render 'outers/outer', { outer: @outer } %>
+      <% else %>
+        <p>アウターのサイズは記録されていません</p>
+      <% end %>
+    </p>
+  </div>
+  <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <% if @hat.present? %>
+        <%= render 'hats/hat', { hat: @hat } %>
+      <% else %>
+        <p>ハットのサイズは記録されていません</p>
+      <% end %>
+    </p>
+  </div>
+  <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <% if @ring.present? %>
+        <%= render 'rings/ring', { ring: @ring } %>
+      <% else %>
+        <p>リングのサイズは記録されていません</p>
+      <% end %>
+    </p>
+  </div>
+  <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <% if @underwear.present? %>
+        <%= render 'underwears/underwear', { underwear: @underwear } %>
+      <% else %>
+        <p>下着のサイズは記録されていません</p>
+      <% end %>
+    </p>
+  </div>
+</div>
+
+const tabElements = [
+    {
+        id: 'profile',
+        triggerEl: document.querySelector('#profile-tab-example'),
+        targetEl: document.querySelector('#profile-example')
+    },
+    {
+        id: 'dashboard',
+        triggerEl: document.querySelector('#dashboard-tab-example'),
+        targetEl: document.querySelector('#dashboard-example')
+    },
+    {
+        id: 'settings',
+        triggerEl: document.querySelector('#settings-tab-example'),
+        targetEl: document.querySelector('#settings-example')
+    },
+    {
+        id: 'contacts',
+        triggerEl: document.querySelector('#contacts-tab-example'),
+        targetEl: document.querySelector('#contacts-example')
+    }
+];
+
+// options with default values
+const options = {
+    defaultTabId: 'settings',
+    activeClasses: 'text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-400 border-blue-600 dark:border-blue-500',
+    inactiveClasses: 'text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300',
+    onShow: () => {
+        console.log('tab is shown');
+    }
+};

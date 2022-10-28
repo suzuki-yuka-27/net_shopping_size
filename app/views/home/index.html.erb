@@ -1,28 +1,25 @@
 <div>
   <%= image_tag 'cloth_size_main_logo.png' %>
 </div>
-<%= render 'shared/input_data' %>
-<% unless logged_in? %>
-  <p class= "font-extrabold p-2 text-sm md:text-base">こんなお悩みありませんか？</p>
-  <p class= "text-sm md:text-base">ネットショッピングをするたびにサイズを測っている</p>
-  <p class= "p-2 text-sm md:text-base">洋服から小物までまとめてサイズを記録したい</p>
-  <p class= "mt-10 text-base md:text-xl font-bold text-center md:whitespace-nowrap">クロササイズは、<br>そんなお悩みを解決するサイズ記録サービスです!</p>
-  <div class="flex flex-col items-center drop-shadow-2xl">
-    <p class= "mt-8 font-bold">\さっそく始めよう/</p>
-    <%= link_to line_login_api_login_path, method: :post do %>
-      <%= image_tag 'line_login_logo', size: '350x400' %>
-    <% end %>
-    <div class= "mt-10 px-16 py-5 bg-black rounded-full text-white font-bold">
-      <%= button_to t('defaults.guest_login'), '/guest_login', method: :post, data: { confirm: 'ログアウトしてもよろしいですか？' } %>
-    </div>
+<p class= "font-extrabold p-2 text-sm md:text-base">こんなお悩みありませんか？</p>
+<p class= "text-sm md:text-base">ネットショッピングをするたびにサイズを測っている</p>
+<p class= "p-2 text-sm md:text-base">洋服から小物までまとめてサイズを記録したい</p>
+<p class= "mt-10 text-base md:text-xl font-bold text-center md:whitespace-nowrap">クロササイズは、<br>そんなお悩みを解決するサイズ記録サービスです!</p>
+<div class="flex flex-col items-center drop-shadow-2xl">
+  <p class= "mt-8 font-bold">\さっそく始めよう/</p>
+  <%= link_to line_login_api_login_path, method: :post do %>
+    <%= image_tag 'line_login_logo', size: '350x400' %>
+  <% end %>
+  <div class= "mt-10 px-16 py-5 bg-black rounded-full text-white font-bold">
+    <%= button_to t('defaults.guest_login'), '/guest_login', method: :post, data: { confirm: 'ログアウトしてもよろしいですか？' } %>
   </div>
-<% end %>
+</div>
 <% if logged_in? %>
   <div class= "grid grid-cols-2 gap-5 md:gap-10 my-10">
     <div class= "flex flex-col gap-5 md:gap-10">
       <div>
-        <%= link_to new_top_path do %>
-          <div class= "block p-4 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
+        <%= link_to tops_path do %>
+          <div class= "block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
             <p class= "text-sm font-bold">TOPS</p>
             <div class= "flex flex-center items-center">
               <%= image_tag 'stamp_tops.png', size: '120x120' %>
@@ -31,8 +28,8 @@
         <% end %>
       </div>
       <div>
-        <%= link_to new_hat_path do %>
-          <div class= "block p-4 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
+        <%= link_to hats_path do %>
+          <div class= "block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
             <p class= "text-sm font-bold mb-3">HATS</p>
             <div class= "flex flex-center items-center">
               <%= image_tag 'stamp_hats.png', size: '120x120' %>
@@ -42,8 +39,8 @@
       </div>
     </div>
     <div>
-      <%= link_to new_bottom_path do %>
-        <div class= "block px-6 py-11 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
+      <%= link_to bottoms_path do %>
+        <div class= "block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
           <p class= "text-sm font-bold mb-3">BOTTOMS</p>
           <div class= "flex flex-center items-center">
             <%= image_tag 'stamp_bottoms.png', size: '120x120' %>
@@ -52,7 +49,7 @@
       <% end %>
     </div>
     <div>
-      <%= link_to new_one_piece_path do %>
+      <%= link_to one_pieces_path do %>
         <div class= "block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
           <p class= "text-sm font-bold mb-3">ONE PIECES</p>
           <div class= "flex flex-center items-center">
@@ -62,18 +59,8 @@
       <% end %>
     </div>
     <div>
-      <%= link_to new_underwear_path do %>
-        <div class= "block p-7 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
-          <p class= "text-sm font-bold mb-3">UNDERWEARS</p>
-          <div class= "flex flex-center items-center">
-            <%= image_tag 'stamp_underwears.png', size: '120x120' %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div>
-      <%= link_to new_ring_path do %>
-        <div class= "block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
+      <%= link_to rings_path do %>
+        <div class= "gap-y-0 block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
           <p class= "text-sm font-bold mb-3">RINGS</p>
           <div class= "flex flex-center items-center">
             <%= image_tag 'stamp_rings.png', size: '120x120' %>
@@ -82,11 +69,21 @@
       <% end %>
     </div>
     <div>
-      <%= link_to new_outer_path do %>
+      <%= link_to outers_path do %>
         <div class= "gap-y-0 block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
           <p class= "text-sm font-bold mb-3">OUTERS</p>
           <div class= "flex flex-center items-center">
             <%= image_tag 'stamp_outers.png', size: '120x120' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to underwears_path do %>
+        <div class= "gap-y-0 block p-6 max-w-sm bg-white border border-black shadow-lg duration-300 hover:transition hover:duration-300 hover:scale-125 hover:cursor-pointer">
+          <p class= "text-sm font-bold mb-3">UNDERWEARS</p>
+          <div class= "flex flex-center items-center">
+            <%= image_tag 'stamp_underwears.png', size: '120x120' %>
           </div>
         </div>
       <% end %>

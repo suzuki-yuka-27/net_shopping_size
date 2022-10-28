@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   get '/logout', to: 'user_sessions#destroy'
   get 'line_login_api/login', to: 'line_login_api#login'
   get 'line_login_api/callback', to: 'line_login_api#callback'
+  get '/callback', to: 'line_login_api#callback'
   post '/callback', to: 'line_bot#callback'
 
-  resource :top
-  resource :bottom
-  resource :hat
-  resource :ring
-  resource :one_piece
-  resource :outer
-  resource :underwear
+  resources :tops
+  resources :bottoms
+  resources :hats
+  resources :rings
+  resources :one_pieces
+  resources :outers
+  resources :underwears
 end
