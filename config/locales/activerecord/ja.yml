@@ -10,7 +10,6 @@ ja:
         password:  'パスワード'
         password_confirmation:  '確認用パスワード'
       top:
-        title:  'タイトル'
         neck:  '首周り'
         shoulder_width:  '肩幅'
         body_width:  '身幅（バスト）'
@@ -18,7 +17,6 @@ ja:
         sleeve_length:  '袖丈'
         sleeve_width:  '袖幅'
       bottom:
-        title:  'タイトル'
         waist:  'ウエスト'
         hip:  'ヒップ'
         rising_length:  '股上'
@@ -27,13 +25,10 @@ ja:
         thickness_of_thigh:  'もも幅（わたり）'
         bottom_width:  '裾幅'
       hat:
-        title:  'タイトル'
         head_circumference:  '頭周り'
       ring:
-        title:  'タイトル'
         finger_circumference:  '指周り'
       one_piece:
-        title:  'タイトル'
         neck:  '首周り'
         shoulder_width:  '肩幅'
         bust:  'バスト'
@@ -43,7 +38,6 @@ ja:
         sleeve_length:  '袖丈'
         sleeve_width:  '袖幅'
       outer:
-        title:  'タイトル'
         neck:  '首周り'
         shoulder_width:  '肩幅'
         body_width:  '身幅（バスト）'
@@ -51,7 +45,6 @@ ja:
         sleeve_length:  '袖丈'
         sleeve_width:  '袖幅'
       underwear:
-        title:  'タイトル'
         top_bust:  'トップバスト'
         under_bust:  'アンダーバスト'
         waist:  'ウエスト'

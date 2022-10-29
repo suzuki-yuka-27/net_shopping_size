@@ -13,11 +13,7 @@
 
   <body>
     <div class= "flex flex-col min-h-screen bg-cover" style="background-image: url('<%= asset_path('paint_00001.jpeg') %>');">
-      <% if logged_in? %>
-        <%= render 'shared/logged_in_header' %>
-      <% else %>
-        <%= render 'shared/header' %>
-      <% end %>
+      <%= render 'shared/header' %>
       <main class= "container mx-auto flex-grow">
         <div class= "flex flex-col justify-center items-center">
           <%= render 'shared/flash_message' %>
