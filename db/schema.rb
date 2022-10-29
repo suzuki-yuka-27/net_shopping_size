@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_10_26_010850) do
   create_table "bottoms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title", null: false
     t.float "waist", null: false
     t.float "hip", null: false
     t.float "rising_length", null: false
@@ -27,7 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_010850) do
   end
 
   create_table "hats", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title", null: false
     t.float "head_circumference", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -36,7 +34,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_010850) do
   end
 
   create_table "one_pieces", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title", null: false
     t.float "neck", null: false
     t.float "shoulder_width", null: false
     t.float "bust", null: false
@@ -52,7 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_010850) do
   end
 
   create_table "outers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title", null: false
     t.float "neck", null: false
     t.float "shoulder_width", null: false
     t.float "body_width", null: false
@@ -66,7 +62,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_010850) do
   end
 
   create_table "rings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title", null: false
     t.float "finger_circumference", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -75,7 +70,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_010850) do
   end
 
   create_table "tops", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title", null: false
     t.float "neck", null: false
     t.float "shoulder_width", null: false
     t.float "body_width", null: false
@@ -89,7 +83,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_010850) do
   end
 
   create_table "underwears", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title", null: false
     t.float "top_bust", null: false
     t.float "under_bust", null: false
     t.float "waist", null: false
@@ -101,10 +94,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_010850) do
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "crypted_password"
-    t.string "salt"
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "line_user_id", null: false
