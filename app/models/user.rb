@@ -9,5 +9,6 @@ class User < ApplicationRecord
   has_one :outer, dependent: :destroy
   has_one :underwear, dependent: :destroy
 
+  validates :email, presence: true
   validates :line_user_id, presence: true, uniqueness: true
 end
