@@ -4,6 +4,11 @@ ja:
       user:  'ユーザー'
       top:  'トップス'
       bottom:  'ボトムス'
+      hat:  '帽子'
+      ring:  '指輪'
+      one_piece:  'ワンピース'
+      outer:  'アウター'
+      underwear:  '下着'
     attributes:
       user:
         email:  'メールアドレス'
