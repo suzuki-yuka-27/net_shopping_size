@@ -33,3 +33,8 @@ ja:
       logged_in:  '既にゲストでログインしています。'
     destroy:
       logout:  'ログアウトしました。'
+  line_bot:
+    callback:
+      which_jenre:  'どのジャンルのサイズを探してますか？'
+    search_and_create_message:
+      not_jenre_size:  '%{jenre}のサイズが記録されていません'
