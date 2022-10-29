@@ -1,0 +1,44 @@
+<div class= "grid grid-cols-1 gap-5 md:grid-cols-2">
+  <% if @top.present? %>
+    <div class= "flex flex-col items-center">
+      <p>TOPS<p>
+      <%= render 'tops/top', { top: @top } %>
+    </div>
+  <% end %>
+  <% if @bottom.present? %>
+    <div class= "flex flex-col items-center">
+      <p>BOTTOMS<p>
+      <%= render 'bottoms/bottom', { bottom: @bottom } %>
+    </div>
+  <% end %>
+  <% if @one_piece.present? %>
+    <div class= "flex flex-col items-center">
+      <p>ONE PIECES<p>
+      <%= render 'one_pieces/one_piece', { one_piece: @one_piece } %>
+    </div>
+  <% end %>
+  <% if @outer.present? %>
+    <div class= "flex flex-col items-center">
+      <p>OUTERS<p>
+      <%= render 'outers/outer', { outer: @outer } %>
+    </div>
+  <% end %>
+  <% if @hat.present? %>
+    <div class= "flex flex-col items-center">
+      <p>HATS<p>
+      <%= render 'hats/hat', { hat: @hat } %>
+    </div>
+  <% end %>
+  <% if @ring.present? %>
+    <div class= "flex flex-col items-center">
+      <p>RINGS<p>
+      <%= render 'rings/ring', { ring: @ring } %>
+    </div>
+  <% end %>
+  <% if @underwear.present? %>
+    <div class= "flex flex-col items-center">
+      <p>UNDERWEARS<p>
+      <%= render 'underwears/underwear', { underwear: @underwear } %>
+    </div>
+  <% end %>
+</div>
