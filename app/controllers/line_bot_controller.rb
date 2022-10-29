@@ -15,7 +15,7 @@ class LineBotController < ApplicationController
         case event.type
         when Line::Bot::Event::MessageType::Text
           case @message
-          when "Tops", "Bottoms", "One Pieces", "Outers", "Hats", "Rings", "Underwears"
+          when Top.model_name.human, Bottom.model_name.human, OnePiece.model_name.human, Outer.model_name.human, Hat.model_name.human, Ring.model_name.human, Underwear.model_name.human
             message = search_and_create_message(@message)
             client.reply_message(event['replyToken'], message)
           else
@@ -38,8 +38,8 @@ class LineBotController < ApplicationController
   end
 
   def search_and_create_message(keyword)
-    if keyword == "Tops"
-      top = User.find(current_user.id).top
+    if keyword == Top.model_name.human
+      top = Top.find_by(id: 1)
       if top.present?
         text = ''
         text  <<
@@ -50,11 +50,11 @@ class LineBotController < ApplicationController
         Top.human_attribute_name(:sleeve_length) + "  " + top.sleeve_length.to_s + "cm" + "\n" +
         Top.human_attribute_name(:sleeve_width) + "  " + top.sleeve_width.to_s + "cm"
       else
-        text = "トップスのサイズが記録されていません"
+        text = t('.not_jenre_size', jenre: Top.model_name.human)
       end
 
-    elsif keyword == "Bottoms"
-      bottom = User.find(current_user.id).bottom
+    elsif keyword == Bottom.model_name.human
+      bottom = Bottom.find_by(id: 1)
       if bottom.present?
         text = ''
         text <<
@@ -66,11 +66,11 @@ class LineBotController < ApplicationController
         Bottom.human_attribute_name(:thickness_of_thigh) + "  " + bottom.thickness_of_thigh.to_s + "cm" + "\n" +
         Bottom.human_attribute_name(:bottom_width) + "  " + bottom.bottom_width.to_s + "cm"
       else
-        text = "ボトムスのサイズが記録されていません"
+        text = t('.not_jenre_size', jenre: Bottom.model_name.human)
       end
 
-    elsif keyword == "One Pieces"
-      one_piece = User.find(current_user.id).one_piece
+    elsif keyword == OnePiece.model_name.human
+      one_piece = OnePiece.find_by(id: 1)
       if one_piece.present?
         text = ''
         text <<
@@ -83,11 +83,11 @@ class LineBotController < ApplicationController
         OnePiece.human_attribute_name(:sleeve_length) + "  " + one_piece.sleeve_length.to_s + "cm" + "\n" +
         OnePiece.human_attribute_name(:sleeve_width) + "  " + one_piece.sleeve_width.to_s + "cm"
       else
-        text = "ワンピースのサイズが記録されていません"
+        text = t('.not_jenre_size', jenre: OnePiece.model_name.human)
       end
 
-    elsif keyword == "Outers"
-      outer = User.find(current_user.id).outer
+    elsif keyword == Outer.model_name.human
+      outer = Outer.find_by(id: 1)
       if outer.present?
         text = ''
         text <<
@@ -98,31 +98,31 @@ class LineBotController < ApplicationController
         Outers.human_attribute_name(:sleeve_length) + "  " + outer.sleeve_length.to_s + "cm" + "\n" +
         Outers.human_attribute_name(:sleeve_width) + "  " + outer.sleeve_width.to_s + "cm"
       else
-        text = "アウターのサイズが記録されていません"
+        text = t('.not_jenre_size', jenre: Outer.model_name.human)
       end
 
-    elsif keyword == "Hats"
-      hat = User.find(current_user.id).hat
+    elsif keyword == Hat.model_name.human
+      hat = Hat.find_by(id: 1)
       if hat.present?
         text = ''
         text <<
         Hat.human_attribute_name(:head_circumference) + "  " + hat.head_circumference.to_s + "cm"
       else
-        text = "帽子のサイズが記録されていません"
+        text = t('.not_jenre_size', jenre: Hat.model_name.human)
       end
 
-    elsif keyword == "Rings"
-      ring = User.find(current_user.id).ring
+    elsif keyword == Ring.model_name.human
+      ring = Ring.find_by(id: 1)
       if ring.present?
         text = ''
         text <<
         Ring.human_attribute_name(:finger_circumference) + "  " + ring.finger_circumference.to_s + "cm"
       else
-        text = "指輪のサイズが記録されていません"
+        text = t('.not_jenre_size', jenre: Ring.model_name.human)
       end
 
-    elsif keyword == "Underwears"
-      underwear = User.find(current_user.id).underwear
+    elsif keyword == Underwear.model_name.human
+      underwear = Underwear.find_by(id: 1)
       if underwear.present?
         text = ''
         text <<
@@ -131,7 +131,7 @@ class LineBotController < ApplicationController
         Underwear.human_attribute_name(:waist) + "  " + underwear.waist.to_s + "cm" + "\n" +
         Underwear.human_attribute_name(:hip) + "  " + underwear.hip.to_s + "cm"
       else
-        text = "下着のサイズが記録されていません"
+        text = t('.not_jenre_size', jenre: Underwear.model_name.human)
       end
     end
     message = {
@@ -143,70 +143,63 @@ class LineBotController < ApplicationController
   def first_reply
     {
       "type": "text",
-      "text": "どのジャンルのサイズを探してる？",
+      "text": (t'.which_jenre'),
       "quickReply": {
         "items": [
           {
             "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_tops.png",
             "action": {
               "type": "message",
-              "label": "Tops",
-              "text": "Tops"
+              "label": Top.model_name.human,
+              "text": Top.model_name.human
             }
           },
           {
             "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_bottoms.png",
             "action": {
               "type": "message",
-              "label": "Bottoms",
-              "text": "Bottoms"
+              "label": Bottom.model_name.human,
+              "text": Bottom.model_name.human
             }
           },
           {
             "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_one_pieces.png",
             "action": {
               "type": "message",
-              "label": "One Pieces",
-              "text": "One Pieces"
+              "label": OnePiece.model_name.human,
+              "text": OnePiece.model_name.human
             }
           },
           {
             "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_outers.png",
             "action": {
               "type": "message",
-              "label": "Outers",
-              "text": "Outers"
+              "label": Outer.model_name.human,
+              "text": Outer.model_name.human
             }
           },
           {
             "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_hats.png",
             "action": {
               "type": "message",
-              "label": "Hats",
-              "text": "Hats"
+              "label": Hat.model_name.human,
+              "text": Hat.model_name.human
             }
           },
           {
             "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_rings.png",
             "action": {
               "type": "message",
-              "label": "Rings",
-              "text": "Rings"
+              "label": Ring.model_name.human,
+              "text": Ring.model_name.human
             }
           },
           {
             "type": "action",
-            "imageUrl": "https://example.com/assets/stamp_underwears.png",
             "action": {
               "type": "message",
-              "label": "Underwears",
-              "text": "Underwears"
+              "label": Underwear.model_name.human,
+              "text": Underwear.model_name.human
             }
           },
         ]
