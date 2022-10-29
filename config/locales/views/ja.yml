@@ -1,7 +1,6 @@
 ja:
   defaults:
     login:  'ログイン'
-    guest_login:  'ゲストログイン'
     logout:  'ログアウト'
     new:  '新規作成'
     create:  '作成'
