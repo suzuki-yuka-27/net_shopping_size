@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'line-bot-api'
 gem "puma"
 gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
+gem 'sitemap_generator'
 gem 'sorcery'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.10'
