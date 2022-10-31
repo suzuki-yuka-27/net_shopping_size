@@ -11,7 +11,7 @@ module ApplicationHelper
       noindex: ! Rails.env.production?,
       icon: [
         { href: image_url('favicon.png') },
-        { href: image_url('ogp_image.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
+        { href: image_url('ogp_image_square.png'), rel: 'apple-touch-icon', sizes: '180x180' },
       ],
       og: {
         site_name: t('defaults.service_name'),
@@ -19,16 +19,16 @@ module ApplicationHelper
         description: t('defaults.description'), 
         type: 'website',
         url: request.original_url,
-        image: image_url('ogp_image.png'),
+        image: image_url('ogp_image_square.png'),
         locale: 'ja_JP',
       },
       twitter: {
         card: 'summary',
         site: '@cloth_size',
-        title: t('defaults.title'),
+        title: t('defaults.service_name'),
         separator: '|',
-        description: t('defaults.description'),
-        image_url: image_url('ogp_image.png'),
+        description: t('defaults.twitter_description'),
+        image_url: image_url('ogp_image_square.png'),
       }
     }
   end
