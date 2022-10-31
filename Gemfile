@@ -9,6 +9,7 @@ gem 'bootsnap'
 gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'line-bot-api'
+gem 'meta-tags'
 gem "puma"
 gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
 gem 'sitemap_generator'
