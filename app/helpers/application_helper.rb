@@ -23,8 +23,12 @@ module ApplicationHelper
         locale: 'ja_JP',
       },
       twitter: {
-        card: 'summary_large_image',
+        card: 'summary',
         site: '@cloth_size',
+        title: t('defaults.title'),
+        separator: '|',
+        description: t('defaults.description'),
+        image_url: image_url('ogp_image.png'),
       }
     }
   end
