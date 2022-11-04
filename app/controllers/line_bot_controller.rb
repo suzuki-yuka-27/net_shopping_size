@@ -39,7 +39,7 @@ class LineBotController < ApplicationController
 
   def search_and_create_message(keyword)
     if keyword == Top.model_name.human
-      top = Top.find_by(id: 1)
+      top = User.find_by(current_user).top
       if top.present?
         text = ''
         text  <<
@@ -54,7 +54,7 @@ class LineBotController < ApplicationController
       end
 
     elsif keyword == Bottom.model_name.human
-      bottom = Bottom.find_by(id: 1)
+      bottom = User.find_by(current_user).bottom
       if bottom.present?
         text = ''
         text <<
@@ -70,7 +70,7 @@ class LineBotController < ApplicationController
       end
 
     elsif keyword == OnePiece.model_name.human
-      one_piece = OnePiece.find_by(id: 1)
+      one_piece = User.find_by(current_user).one_piece
       if one_piece.present?
         text = ''
         text <<
@@ -87,7 +87,7 @@ class LineBotController < ApplicationController
       end
 
     elsif keyword == Outer.model_name.human
-      outer = Outer.find_by(id: 1)
+      outer = User.find_by(current_user).outer
       if outer.present?
         text = ''
         text <<
@@ -102,7 +102,7 @@ class LineBotController < ApplicationController
       end
 
     elsif keyword == Hat.model_name.human
-      hat = Hat.find_by(id: 1)
+      hat = User.find_by(current_user).hat
       if hat.present?
         text = ''
         text <<
@@ -112,7 +112,7 @@ class LineBotController < ApplicationController
       end
 
     elsif keyword == Ring.model_name.human
-      ring = Ring.find_by(id: 1)
+      ring = User.find_by(current_user).ring
       if ring.present?
         text = ''
         text <<
@@ -122,7 +122,7 @@ class LineBotController < ApplicationController
       end
 
     elsif keyword == Underwear.model_name.human
-      underwear = Underwear.find_by(id: 1)
+      underwear = User.find_by(current_user).underwear
       if underwear.present?
         text = ''
         text <<
