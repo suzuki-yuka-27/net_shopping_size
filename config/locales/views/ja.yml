@@ -7,6 +7,7 @@ ja:
     edit:  '編集'
     update:  '更新'
     delete:  '削除'
+    destroy:  'ログアウト'
     title:  '洋服のジャンルごとにサイズを記録するサービス'
     service_name:  'クロササイズ'
     description:  'クロササイズは、洋服のジャンルごとにサイズを記録できるサービスです！また、記録したサイズをLINEで簡単に取得できます！！'
@@ -30,14 +31,7 @@ ja:
       login:  'LINEでログインに成功しました！'
       not_login:  'ログインに失敗しました。'
       login_error:  '不正なアクセスであるため、ログインできません。'
-  user_sessions:
-    guest_login:
-      login:  'ゲストでログインしました！'
-      logged_in:  '既にゲストでログインしています。'
-    destroy:
-      logout:  'ログアウトしました。'
   line_bot:
     callback:
       which_jenre:  'どのジャンルのサイズを探してますか？'
-    search_and_create_message:
       not_jenre_size:  '%{jenre}のサイズが記録されていません'
