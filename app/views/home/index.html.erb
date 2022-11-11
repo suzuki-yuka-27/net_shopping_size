@@ -6,11 +6,16 @@
   <p class= "text-sm md:text-base">ネットショッピングをするたびにサイズを測っている</p>
   <p class= "p-2 text-sm md:text-base">洋服から小物までまとめてサイズを記録したい</p>
   <p class= "mt-10 text-base md:text-xl font-bold text-center md:whitespace-nowrap">クロササイズは、<br>そんなお悩みを解決するサイズ記録サービスです!</p>
-  <div class="flex flex-col items-center drop-shadow-2xl">
+  <div class="flex flex-col items-center drop-shadow-2xl mb-5">
     <p class= "mt-8 font-bold">\さっそく始めよう/</p>
-    <%= link_to line_login_api_login_path, method: :post do %>
-      <%= image_tag 'line_login_logo', size: '350x400' %>
-    <% end %>
+    <div class= "px-16 py-5 bg-black rounded-full font-bold text-white">
+      <%= link_to t('defaults.login'), login_path %>
+    </div>
+    <p class= "mt-8 font-bold"><%= t('.try_app') %></p>
+    <div class= " px-10 py-5 bg-black rounded-full font-bold text-white">
+      <%= button_to t('defaults.guest_login'), guest_login_path, method: :post %>
+    </div>
+    <p><%= t('.asterisk_guest_login') %></p>
   </div>
 <% end %>
 <% if logged_in? %>

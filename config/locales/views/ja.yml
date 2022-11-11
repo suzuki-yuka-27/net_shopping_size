@@ -21,8 +21,31 @@ ja:
     not_update_size:  'サイズを更新できませんでした。'
     no_size:  'まだサイズが記録されていません。'
     errors:  '以下の要件を満たしていません。'
+    require_login:  'ログインしてください。'
+    guest_login:  'ゲストログイン'
   significant:
     copyright:  '©️2022 クロササイズ'
     terms_of_service:  '利用規約'
     privacy_policy:  'プライバシーポリシー'
     inquiry:  'お問合せ'
+  home:
+    index:
+      try_app:  '\お試しはこちら/'
+      asterisk_guest_login:  '※1clickでログインできます！'  
+  users:
+    create:
+      new_user:  'ユーザー新規登録に成功しました！'
+      not_new_user:  'ユーザーの新規登録に失敗しました。'
+  user_sessions:
+    new:
+      to_new_user:  '新規登録はこちら'
+    create:
+      login:  'ログインに成功しました！'
+      not_login:  'ログインに失敗しました。'
+    destroy:
+      logout:  'ログアウトしました！'
+  guest_sessions:
+    create:
+      login:  'ゲストでログインしました！'
+    destroy:
+      logout:  'ゲストでログアウトしました！'
