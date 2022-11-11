@@ -35,5 +35,4 @@
 # TODO Comment out these rules if environment variables can be committed
 /.env
 
-/node_modules
 public/sitemap.xml.gz.DS_Store
