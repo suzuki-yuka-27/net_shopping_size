@@ -26,3 +26,15 @@ ja:
     terms_of_service:  '利用規約'
     privacy_policy:  'プライバシーポリシー'
     inquiry:  'お問合せ'
+  users:
+    create:
+      new_user:  'ユーザー新規登録に成功しました！'
+      not_new_user:  'ユーザーの新規登録に失敗しました。'
+  user_sessions:
+    new:
+      to_new_user:  '新規登録はこちら'
+    create:
+      login:  'ログインに成功しました！'
+      not_login:  'ログインに失敗しました。'
+    destroy:
+      logout:  'ログアウトしました！'

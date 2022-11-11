@@ -8,9 +8,9 @@
   <p class= "mt-10 text-base md:text-xl font-bold text-center md:whitespace-nowrap">クロササイズは、<br>そんなお悩みを解決するサイズ記録サービスです!</p>
   <div class="flex flex-col items-center drop-shadow-2xl">
     <p class= "mt-8 font-bold">\さっそく始めよう/</p>
-    <%= link_to line_login_api_login_path, method: :post do %>
-      <%= image_tag 'line_login_logo', size: '350x400' %>
-    <% end %>
+    <div class= "px-16 py-5 bg-black rounded-full font-bold text-white">
+      <%= link_to 'ログイン', login_path %>
+    </div>
   </div>
 <% end %>
 <% if logged_in? %>
