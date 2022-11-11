@@ -8,6 +8,4 @@ class User < ApplicationRecord
   has_one :one_piece, dependent: :destroy
   has_one :outer, dependent: :destroy
   has_one :underwear, dependent: :destroy
-
-  validates :line_user_id, presence: true, uniqueness: true
 end

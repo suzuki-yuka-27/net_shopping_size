@@ -26,12 +26,3 @@ ja:
     terms_of_service:  '利用規約'
     privacy_policy:  'プライバシーポリシー'
     inquiry:  'お問合せ'
-  line_login_api:
-    callback:
-      login:  'LINEでログインに成功しました！'
-      not_login:  'ログインに失敗しました。'
-      login_error:  '不正なアクセスであるため、ログインできません。'
-  line_bot:
-    callback:
-      which_jenre:  'どのジャンルのサイズを探してますか？'
-      not_jenre_size:  '%{jenre}のサイズが記録されていません'
