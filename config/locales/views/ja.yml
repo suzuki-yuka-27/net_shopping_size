@@ -21,6 +21,7 @@ ja:
     not_update_size:  'サイズを更新できませんでした。'
     no_size:  'まだサイズが記録されていません。'
     errors:  '以下の要件を満たしていません。'
+    require_login:  'ログインしてください。'
   significant:
     copyright:  '©️2022 クロササイズ'
     terms_of_service:  '利用規約'
