@@ -17,4 +17,11 @@ Rails.application.routes.draw do
   resource :one_piece, only: %i[new create show edit update]
   resource :outer, only: %i[new create show edit update]
   resource :underwear, only: %i[new create show edit update]
+
+  namespace :admin do
+    root to: 'dashboards#index'
+    get '/login', to: 'user_sessions#new'
+    post '/login', to: 'user_sessions#create'
+    delete '/logout', to: 'user_sessions#destroy'
+  end
 end

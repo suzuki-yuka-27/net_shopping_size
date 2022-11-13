@@ -12,4 +12,6 @@ class User < ApplicationRecord
   has_one :one_piece, dependent: :destroy
   has_one :outer, dependent: :destroy
   has_one :underwear, dependent: :destroy
+
+  enum role: { general: 0, admin: 1 }
 end
