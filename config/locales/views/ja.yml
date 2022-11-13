@@ -23,6 +23,7 @@ ja:
     errors:  '以下の要件を満たしていません。'
     require_login:  'ログインしてください。'
     guest_login:  'ゲストログイン'
+    not_authorized:  '権限がありません。'
   significant:
     copyright:  '©️2022 クロササイズ'
     terms_of_service:  '利用規約'
@@ -49,3 +50,13 @@ ja:
       login:  'ゲストでログインしました！'
     destroy:
       logout:  'ゲストでログアウトしました！'
+  admin:
+    dashboards:
+      index:
+        title:  'ダッシュボード'
+    user_sessions:
+      create:
+        login:  '管理画面のログインに成功しました！'
+        not_login:  '管理画面のログインに失敗しました。'
+      destroy:
+        logout:  '管理画面からログアウトしました！'
