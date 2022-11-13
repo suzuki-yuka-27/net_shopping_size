@@ -36,3 +36,4 @@
 /.env
 
 public/sitemap.xml.gz.DS_Store
+db/seeds.rb
