@@ -24,6 +24,7 @@ ja:
     require_login:  'ログインしてください。'
     guest_login:  'ゲストログイン'
     not_authorized:  '権限がありません。'
+    select:  '選択ボックス'
   significant:
     copyright:  '©️2022 クロササイズ'
     terms_of_service:  '利用規約'
@@ -60,3 +61,12 @@ ja:
         not_login:  '管理画面のログインに失敗しました。'
       destroy:
         logout:  '管理画面からログアウトしました！'
+    materials:
+      index:
+        no_record:  '素材のデータがありません'
+      create:
+        success:  '素材を追加しました！'
+        fail:  '素材を追加できませんでした。'
+      update:
+        success:  '素材の編集内容を登録しました！'
+        fail:  '素材の編集内容を登録できませんでした。'

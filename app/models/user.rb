@@ -13,5 +13,7 @@ class User < ApplicationRecord
   has_one :outer, dependent: :destroy
   has_one :underwear, dependent: :destroy
 
+  has_many :materials
+
   enum role: { general: 0, admin: 1 }
 end

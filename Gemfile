@@ -6,6 +6,7 @@ ruby '3.1.2'
 gem 'rails', '~> 7.0'
 
 gem 'bootsnap'
+gem 'carrierwave', '~> 2.0'
 gem 'dotenv-rails'
 gem 'importmap-rails'
 gem 'jquery-rails'
