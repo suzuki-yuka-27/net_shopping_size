@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_12_104354) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_13_060108) do
   create_table "bottoms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.float "waist", null: false
     t.float "hip", null: false
@@ -31,6 +31,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_104354) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_hats_on_user_id"
+  end
+
+  create_table "materials", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description", null: false
+    t.float "washing"
+    t.string "strength", null: false
+    t.string "weakness"
+    t.string "material_image"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_materials_on_user_id"
   end
 
   create_table "one_pieces", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -105,6 +118,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_104354) do
 
   add_foreign_key "bottoms", "users"
   add_foreign_key "hats", "users"
+  add_foreign_key "materials", "users"
   add_foreign_key "one_pieces", "users"
   add_foreign_key "outers", "users"
   add_foreign_key "rings", "users"
