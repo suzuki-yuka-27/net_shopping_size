@@ -9,7 +9,7 @@ class Admin::MaterialsController < Admin::BaseController
   end
 
   def create
-    @material = current_user.material.build(material_params)
+    @material = current_user.materials.build(material_params)
     if @material.save
       redirect_to admin_materials_path, success: t('.success')
     else
@@ -24,7 +24,7 @@ class Admin::MaterialsController < Admin::BaseController
 
   def update
     if @material
-      redirect_to admin_material(@material), success: t('.success')
+      redirect_to admin_material_path(@material), success: t('.success')
     else
       render :edit
       flash[:danger] = t('.fail')
@@ -39,10 +39,10 @@ class Admin::MaterialsController < Admin::BaseController
   private
 
   def material_params
-    params.require(:material).permit(:name, :description, :washing, :strength, :weakness, :material_image)
+    params.require(:material).permit(:name, :description, :material_image, :material_image_cache)
   end
 
   def set_material
-    @material = current_user.material.find(params[:id])
+    @material = current_user.materials.find(params[:id])
   end
 end

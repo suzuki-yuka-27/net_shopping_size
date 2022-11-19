@@ -349,6 +349,7 @@ DEPENDENCIES
   importmap-rails
   jquery-rails
   meta-tags
+  mini_magick
   mysql2 (~> 0.5.4)
   pg
   puma

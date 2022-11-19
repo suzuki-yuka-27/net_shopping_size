@@ -2,7 +2,7 @@
 <div>
   <div class= "flex justify-center mb-10">
   </div>
-  <%= form_with model: @material, url: admin_materials_path, local: true do |f| %>
+  <%= form_with model: @material, url: admin_material_path, local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class= "flex flex-col justify-center p-5">
       <div class= "flex flex-col-start items-center">
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class= "flex flex-col items-center">
-      <%= f.submit t('defaults.create'), class: 'mt-7 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
+      <%= f.submit t('defaults.update'), class: 'mt-7 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
     </div>
   <% end %>
 </div>
