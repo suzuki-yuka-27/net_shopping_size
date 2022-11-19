@@ -36,9 +36,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_13_060108) do
   create_table "materials", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
-    t.float "washing"
-    t.string "strength", null: false
-    t.string "weakness"
     t.string "material_image"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

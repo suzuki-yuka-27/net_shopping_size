@@ -11,6 +11,7 @@ gem 'dotenv-rails'
 gem 'importmap-rails'
 gem 'jquery-rails'
 gem 'meta-tags'
+gem "mini_magick"
 gem "puma"
 gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
 gem 'sitemap_generator'

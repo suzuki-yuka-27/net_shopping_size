@@ -4,6 +4,4 @@ class Material < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true
-  validates :strength, presence: true
-  validates :weakness, presence: true
 end
