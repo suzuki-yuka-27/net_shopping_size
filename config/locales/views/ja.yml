@@ -51,6 +51,9 @@ ja:
       login:  'ゲストでログインしました！'
     destroy:
       logout:  'ゲストでログアウトしました！'
+  materials:
+    index:
+      no_record:  '素材のデータがありません'
   admin:
     dashboards:
       index:
