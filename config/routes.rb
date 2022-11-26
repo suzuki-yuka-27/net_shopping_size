@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resource :one_piece, only: %i[new create show edit update]
   resource :outer, only: %i[new create show edit update]
   resource :underwear, only: %i[new create show edit update]
+  resources :materials, only: %i[index]
 
   namespace :admin do
     root to: 'dashboards#index'

@@ -1,0 +1,15 @@
+<% set_meta_tags title: Material.model_name.human %>
+<div>
+  <div class= "flex justify-center mb-10">
+    <%= image_tag 'materials_logo_image.png', size: '500x500' %>
+  </div>
+  <% if @materials.present? %>
+    <div class= "grid md:grid-cols-3 grid-cols-1 gap-5">
+      <%= render @materials %>
+    </div>
+  <% else %>
+    <div class= "font-bold">
+      <p><%= t('.no_record') %></p>
+    </div>
+  <% end %>
+</div>
