@@ -1,5 +1,7 @@
 <div class= "md:mt-10 p-4 w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-  <h1 class= "text-center font-bold text-4xl m-5">Admin</h1>
+  <div class= "flex justify-center mb-10">
+    <%= image_tag 'admin_logo_image.png', size: '250x250' %>
+  </div>
   <%= form_with url: admin_login_path, local: true do |f| %>
     <div>
       <%= f.label :email, User.human_attribute_name(:email) %>
