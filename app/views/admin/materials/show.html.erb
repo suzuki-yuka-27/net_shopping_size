@@ -3,17 +3,17 @@
     <%= image_tag 'materials_logo_image.png', size: '500x500' %>
   </div>
   <div>
-    <div class= "mt-5">
+    <div class= "flex justify-center mt-5">
       <%= image_tag @material.material_image_url, class: 'rounded-xl' %>
     </div>
-    <div class= "text-3xl font-bold mt-3">
+    <div class= "flex justify-center text-3xl font-bold mt-3">
       <%= @material.name %>
     </div>
-    <div class= "mt-3">
+    <div class= "flex justify-center mt-5">
       <%= @material.description %>
     </div>
   </div>
 </div>
-<div class= "flex justify-center mt-5 px-5 py-3 bg-black text-white rounded-full">
-  <%= link_to 'Back', admin_materials_path %>
+<div class= "flex justify-center mt-16 px-5 py-3 bg-black text-white rounded-full">
+  <%= link_to 'Back', materials_path %>
 </div>
