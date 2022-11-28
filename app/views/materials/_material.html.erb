@@ -1,6 +1,8 @@
 <div class= "flex flex-col mt-8 relative">
   <%= image_tag 'hunger_image', size: '200x200' %>
-  <div class= "py-9 bg-black text-2xl text-center text-white font-bold">
-    <%= material.name %>
-  </div>
+  <%= link_to material_path(material) do %>
+    <div class= "py-9 bg-black text-2xl text-center text-white font-bold">
+      <%= material.name %>
+    </div>
+  <% end %>
 </div>
