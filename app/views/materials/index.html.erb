@@ -4,7 +4,7 @@
     <%= image_tag 'materials_logo_image.png', size: '500x500' %>
   </div>
   <% if @materials.present? %>
-    <div class= "grid md:grid-cols-3 grid-cols-1 gap-5">
+    <div class= "grid md:grid-cols-3 grid-cols-1 gap-10">
       <%= render @materials %>
     </div>
   <% else %>
