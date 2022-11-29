@@ -8,8 +8,8 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_back_or_to root_path, success: t('.login')
     else
-      render :new
       flash[:danger] = t('.not_login')
+      render :new
     end
   end
 
