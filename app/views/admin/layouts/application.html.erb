@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= display_meta_tags(default_meta_tags) %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= javascript_tag %>
+  </head>
+
+  <body>
+    <%= render 'admin/shared/sidebar' %>
+    <div class= "flex flex-col min-h-screen bg-cover bg-gray-300 bg-opacity-60">
+      <main class= "container mx-auto flex-grow">
+        <div class= "flex flex-col justify-center items-center">
+          <%= yield %>
+        </div>
+      </main>
+      <%= render 'admin/shared/footer' %>
+    </div>
+  </body>
+</html>

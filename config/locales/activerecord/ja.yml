@@ -9,6 +9,7 @@ ja:
       one_piece:  'ワンピース'
       outer:  'アウター'
       underwear:  '下着'
+      material:  '素材'
     attributes:
       user:
         email:  'メールアドレス'
@@ -54,3 +55,10 @@ ja:
         under_bust:  'アンダーバスト'
         waist:  'ウエスト'
         hip:  'ヒップ'
+      material:
+        name:  '素材名'
+        description:  '説明'
+        washing:  '洗濯'
+        strength:  '長所'
+        weakness:  '短所'
+        material_image:  '素材イメージ'

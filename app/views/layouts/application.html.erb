@@ -11,6 +11,7 @@
     <% if Rails.env.production? %>
       <%= render 'shared/google_analytics' %>
     <% end %>
+    <%= javascript_tag %>
   </head>
 
   <body>

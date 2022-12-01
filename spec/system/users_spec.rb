@@ -11,7 +11,7 @@ RSpec.describe 'Users', type: :system do
           fill_in 'パスワード', with: 'password'
           fill_in '確認用パスワード', with: 'password'
           click_button '作成'
-          expect(page).to have_content  'ユーザーを作成しました。'
+          expect(page).to have_content  'ユーザー新規登録に成功しました！'
           expect(current_path).to eq login_path
         end
       end
@@ -23,7 +23,7 @@ RSpec.describe 'Users', type: :system do
           fill_in 'パスワード', with: 'password'
           fill_in '確認用パスワード', with: 'password'
           click_button '作成'
-          expect(page).to have_content 'ユーザーを作成できませんでした。'
+          expect(page).to have_content 'ユーザーの新規登録に失敗しました。'
           expect(current_path).to eq users_path
         end
       end

@@ -6,15 +6,19 @@ ruby '3.1.2'
 gem 'rails', '~> 7.0'
 
 gem 'bootsnap'
+gem 'carrierwave', '~> 2.0'
 gem 'dotenv-rails'
+gem 'importmap-rails'
 gem 'jquery-rails'
 gem 'meta-tags'
+gem "mini_magick"
 gem "puma"
 gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
 gem 'sitemap_generator'
 gem 'sorcery'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.10'
+gem "turbo-rails"
 
 group :development do
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
@@ -37,3 +41,5 @@ end
 group :production do
   gem 'pg'
 end
+# Use Redis for Action Cable
+gem "redis", "~> 4.0"

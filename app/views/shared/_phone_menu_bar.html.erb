@@ -1,11 +1,20 @@
-<div class= "flex flex-row justify-center items-center bg-gray-400 bg-opacity-60 p-2 sticky bottom-0">
-  <div>
+<div class= "flex justify-center bg-gray-400 bg-opacity-60 p-2 sticky bottom-0">
+  <div class= "flex flex-row">
     <%= link_to root_path do %>
       <div class= "flex flex-col justify-center mx-5">
         <div class= "flex  justify-center">
           <%= image_tag 'icon_120070_256.png', size: '30x30' %>
         </div>
         <p class= "font-normal">Home</p>
+      </div>
+    <% end %>
+    <%= link_to materials_path do %>
+      <div class= "flex flex-col justify-center mx-5">
+        <div class= "flex  justify-center">
+            <%= image_tag 'icon_159511_64.png', size: '30x30' %>
+          </div>
+          <p class= "font-normal">Material</p>
+        </div>
       </div>
     <% end %>
   </div>

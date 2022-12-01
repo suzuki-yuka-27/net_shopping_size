@@ -16,18 +16,18 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context 'パスワードが４文字以上の場合' do
-    it '無効であること' do
-      user = build(:user, password: 'pass', password_confirmation: 'pass')
+  context 'パスワードが5文字以上の場合' do
+    it '有効であること' do
+      user = build(:user, password: 'passw', password_confirmation: 'passw')
       expect(user).to be_valid
     end
   end
 
-  context 'パスワードが4文字未満の場合' do
+  context 'パスワードが5文字未満の場合' do
     it '無効であること' do
       user = build(:user, password: 'pas', password_confirmation: 'pas')
       expect(user).to be_invalid
-      expect(user.errors[:password]).to include('は4文字以上で入力してください')
+      expect(user.errors[:password]).to include('は5文字以上で入力してください')
     end
   end
 

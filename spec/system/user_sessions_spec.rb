@@ -7,7 +7,7 @@ RSpec.describe 'UserSessions', type: :system do
     context 'フォームの入力値が正常' do
       it 'ログインに成功する' do
         login_as(user)
-        expect(page).to have_content 'ログインに成功しました。'
+        expect(page).to have_content 'ログインに成功しました！'
         expect(current_path).to eq root_path
       end
     end
@@ -30,7 +30,7 @@ RSpec.describe 'UserSessions', type: :system do
         login_as(user)
         visit root_path
         click_button 'ログアウト'
-        expect(page).to have_content 'ログアウトしました。'
+        expect(page).to have_content 'ログアウトしました！'
         expect(current_path).to eq root_path
       end
     end

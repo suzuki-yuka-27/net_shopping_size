@@ -1,5 +1,7 @@
 <div class= "md:mt-16 mb-5 p-4">
-  <h1 class= "text-center font-bold text-4xl m-5"><%= t('defaults.login') %></h1>
+  <div class= "flex justify-center mb-10">
+    <%= image_tag 'login_logo_image.png', size: '250x250' %>
+  </div>
   <%= form_with url: login_path, local: true do |f| %>
     <div>
       <%= f.label :email, User.human_attribute_name(:email) %>
