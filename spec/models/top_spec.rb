@@ -8,7 +8,7 @@ RSpec.describe Top, type: :model do
     end
   end
 
-  context 'neckが存在しない場合' do
+  context '首周りの値が存在しない場合' do
     it '無効であること' do
       top = build(:top, neck: nil)
       expect(top).to be_invalid
@@ -16,7 +16,7 @@ RSpec.describe Top, type: :model do
     end
   end
 
-  context 'shoulder_widthが存在しない場合' do
+  context '肩幅の値が存在しない場合' do
     it '無効であること' do
       top = build(:top, shoulder_width: nil)
       expect(top).to be_invalid
@@ -24,7 +24,7 @@ RSpec.describe Top, type: :model do
     end
   end
 
-  context 'body_widthが存在しない場合' do
+  context '身幅（バスト）の値が存在しない場合' do
     it '無効であること' do
       top = build(:top, body_width: nil)
       expect(top).to be_invalid
@@ -32,7 +32,7 @@ RSpec.describe Top, type: :model do
     end
   end
 
-  context 'body_lengthが存在しないこと' do
+  context '着丈の値が存在しないこと' do
     it '無効であること' do
       top = build(:top, body_length: nil)
       expect(top).to be_invalid
@@ -40,7 +40,7 @@ RSpec.describe Top, type: :model do
     end
   end
 
-  context 'sleeve_lengthが存在しない場合' do
+  context '袖丈の値が存在しない場合' do
     it '無効であること' do
       top = build(:top, sleeve_length: nil)
       expect(top).to be_invalid
@@ -48,7 +48,7 @@ RSpec.describe Top, type: :model do
     end
   end
 
-  context 'sleeve_widthが存在しない場合' do
+  context '袖幅の値が存在しない場合' do
     it '無効であること' do
       top = build(:top, sleeve_width: nil)
       expect(top).to be_invalid

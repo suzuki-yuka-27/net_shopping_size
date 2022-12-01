@@ -10,8 +10,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to login_path, success: t('.new_user')
     else
-      render :new
       flash[:danger] = t('.not_new_user')
+      render :new
     end
   end
 
