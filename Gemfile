@@ -37,6 +37,3 @@ group :test do
   gem 'capybara'
   gem 'webdrivers'
 end
-
-# Use Redis for Action Cable
-gem "redis", "~> 4.0"
