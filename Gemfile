@@ -38,8 +38,5 @@ group :test do
   gem 'webdrivers'
 end
 
-group :production do
-  gem 'pg'
-end
 # Use Redis for Action Cable
 gem "redis", "~> 4.0"
