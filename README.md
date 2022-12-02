@@ -21,7 +21,7 @@ __ネットショッピングをするとき、こんなお悩みはありませ
 # 機能一覧
 |  トップページ（ログイン前） |  トップページ（ログイン後）  |
 | ---- | ---- |
-|  <p align="center"><img src="https://user-images.githubusercontent.com/95204839/205238461-cd5bde04-11d6-4867-b547-a408250f8fa5.png" width="140"></p>  |  <p align="center"><img src="https://user-images.githubusercontent.com/95204839/205239233-62da26ec-f0ff-4295-9bca-f80c7773a56a.png" width="150"></p>  |
+|  <p align="center"><img src="https://user-images.githubusercontent.com/95204839/205238461-cd5bde04-11d6-4867-b547-a408250f8fa5.png" width="140"></p>  |  <p align="center"><img src="https://user-images.githubusercontent.com/95204839/205244833-ee2af3a8-29aa-4e7e-93cf-977266d98db9.png" width="150"></p>  |
 |  メールでログインする。<br>また、ゲストログインで簡単にお試しもできる。|  ログイン後はトップページに洋服のジャンルボタンが表示される  |  
 
 |  ユーザー新規登録ページ  | 　ログインページ  |
