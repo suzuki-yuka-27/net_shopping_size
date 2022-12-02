@@ -58,7 +58,4 @@ ja:
       material:
         name:  '素材名'
         description:  '説明'
-        washing:  '洗濯'
-        strength:  '長所'
-        weakness:  '短所'
         material_image:  '素材イメージ'
