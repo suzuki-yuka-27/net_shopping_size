@@ -2,7 +2,7 @@ class GuestSessionsController < ApplicationController
   skip_before_action :require_login, only: %i[create]
 
   def create
-    @guest_user = User.create(
+    @guest_user = User.create!(
       email: SecureRandom.urlsafe_base64 + "@example.com",
       password: 'password',
       password_confirmation: 'password'
