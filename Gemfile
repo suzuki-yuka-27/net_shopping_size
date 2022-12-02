@@ -28,6 +28,7 @@ end
 
 group :development, :test do
   gem 'bullet', '~> 7.0', '>= 7.0.2'
+  gem 'faker'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'mysql2', '~> 0.5.4'
   gem 'rspec-rails', '~> 5.1', '>= 5.1.2'
