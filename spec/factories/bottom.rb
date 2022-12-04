@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :bottom do
-    sequence(:waist, 50)
-    sequence(:hip, 50)
-    sequence(:rising_length, 50)
-    sequence(:inseam, 50)
-    sequence(:total_length, 50)
-    sequence(:thickness_of_thigh, 50)
-    sequence(:bottom_width, 50)
+    waist { "20" }
+    hip { "20" }
+    rising_length { "20" }
+    inseam { "20" }
+    total_length { "20" }
+    thickness_of_thigh { "20" }
+    bottom_width { "20" }
     association :user
   end
 end
