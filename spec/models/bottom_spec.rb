@@ -8,7 +8,7 @@ RSpec.describe Bottom, type: :model do
     end
   end
 
-  context 'waistが存在しない場合' do
+  context 'ウエストが存在しない場合' do
     it '無効であること' do
       bottom = build(:bottom, waist: nil)
       expect(bottom).to be_invalid
@@ -16,7 +16,7 @@ RSpec.describe Bottom, type: :model do
     end
   end
 
-  context 'hipが存在しない場合' do
+  context 'ヒップが存在しない場合' do
     it '無効であること' do
       bottom = build(:bottom, hip: nil)
       expect(bottom).to be_invalid
@@ -24,7 +24,7 @@ RSpec.describe Bottom, type: :model do
     end
   end
 
-  context 'rising_lengthが存在しない場合' do
+  context '股上が存在しない場合' do
     it '無効であること' do
       bottom = build(:bottom, rising_length: nil)
       expect(bottom).to be_invalid
@@ -32,7 +32,7 @@ RSpec.describe Bottom, type: :model do
     end
   end
 
-  context 'inseamが存在しないこと' do
+  context '股下が存在しないこと' do
     it '無効であること' do
       bottom = build(:bottom, inseam: nil)
       expect(bottom).to be_invalid
@@ -40,7 +40,7 @@ RSpec.describe Bottom, type: :model do
     end
   end
 
-  context 'total_lengthが存在しない場合' do
+  context '総丈が存在しない場合' do
     it '無効であること' do
       bottom = build(:bottom, total_length: nil)
       expect(bottom).to be_invalid
@@ -48,7 +48,7 @@ RSpec.describe Bottom, type: :model do
     end
   end
 
-  context 'thickness_of_thighが存在しない場合' do
+  context 'もも幅（わたり）が存在しない場合' do
     it '無効であること' do
       bottom = build(:bottom, thickness_of_thigh: nil)
       expect(bottom).to be_invalid
@@ -56,7 +56,7 @@ RSpec.describe Bottom, type: :model do
     end
   end
 
-  context 'bottom_widthが存在しない場合' do
+  context '裾幅が存在しない場合' do
     it '無効であること' do
       bottom = build(:bottom, bottom_width: nil)
       expect(bottom).to be_invalid
