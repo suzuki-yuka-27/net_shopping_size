@@ -72,7 +72,7 @@ RSpec.describe 'Bottoms', type: :system do
 
       context 'フォームへの入力値が正常' do
         it 'ボトムスの編集が成功する' do
-          fill_in 'ウエスト', with: 20.0
+          fill_in 'ウエスト', with: 30.0
           fill_in 'ヒップ', with: 20.0
           fill_in '股上', with: 20.0
           fill_in '股下', with: 20.0
