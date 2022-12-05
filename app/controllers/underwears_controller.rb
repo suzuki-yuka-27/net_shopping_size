@@ -7,7 +7,7 @@ class UnderwearsController < ApplicationController
   end
 
   def create
-    @underwear = current_user.underwears.build(underwear_params)
+    @underwear = current_user.build_underwear(underwear_params)
     if @underwear.save
       redirect_to @underwear, success: t('defaults.record_size')
     else
