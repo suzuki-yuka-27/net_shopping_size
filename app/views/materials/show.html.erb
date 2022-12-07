@@ -4,13 +4,13 @@
   </div>
   <div>
     <div class= "flex justify-center mt-5">
-      <%= image_tag @material.material_image_url, class: 'rounded-xl' %>
+      <%= image_tag @material.material_image_url, class: 'rounded-xl', size: '250x200' %>
     </div>
     <div class= "flex justify-center text-3xl font-bold mt-3">
       <%= @material.name %>
     </div>
     <div class= "flex justify-center mt-5">
-      <%= @material.description %>
+      <%= safe_join(@material.description.split("\n"),tag(:br)) %
     </div>
   </div>
 </div>
