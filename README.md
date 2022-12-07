@@ -1,4 +1,4 @@
-# [クロササイズ](https://www.cloth-to-size.com/)
+[![cloth_size_main_logo](https://user-images.githubusercontent.com/95204839/205243618-c2cd521a-6e82-4e11-bd0f-900abef990f1.png)](https://www.cloth-to-size.com/)
 
 # サービス概要
 洋服のサイズをジャンルごとに記録できるサービスです。  
@@ -19,20 +19,26 @@ __ネットショッピングをするとき、こんなお悩みはありませ
 また、今後LINE連携を導入する予定です。LINE連携により、記録したサイズをLINEで簡単に取得することができるようになります。  
 
 # 機能一覧
-|  トップページ |  サイズ記録ページ  |
+|  トップページ（ログイン前） |  トップページ（ログイン後）  |
 | ---- | ---- |
-|  画像掲載予定  |  画像掲載予定  |
-|  メールでログインする。<br>ログイン後はトップページに洋服のジャンルボタンが表示される<br>また、ゲストログインで簡単にお試しもできる。|  測ったサイズを記録する<br>それぞれの部位名はガイド画像を参照  |
+|  <p align="center"><img src="https://user-images.githubusercontent.com/95204839/205238461-cd5bde04-11d6-4867-b547-a408250f8fa5.png" width="140"></p>  |  <p align="center"><img src="https://user-images.githubusercontent.com/95204839/205244833-ee2af3a8-29aa-4e7e-93cf-977266d98db9.png" width="150"></p>  |
+|  メールでログインする。<br>また、ゲストログインで簡単にお試しもできる。|  ログイン後はトップページに洋服のジャンルボタンが表示される  |  
 
-|  サイズ詳細ページ |  サイズ編集ページ  |
+|  ユーザー新規登録ページ  | 　ログインページ  |
 | ---- | ---- |
-|  画像掲載予定  |  画像掲載予定  |
-|  記録したサイズを表示<br>編集ボタンを押すことでサイズ編集画面へ遷移  |  記録したサイズを変更する  |
+| <p align="center"><img src="https://user-images.githubusercontent.com/95204839/205240808-fb7b9b63-76e6-459f-aeed-f17099f2a4d6.png" width="150"></p> | <p align="center"><img src="https://user-images.githubusercontent.com/95204839/205240664-0d610cf8-cb1f-436c-bdd3-66960a70d9a7.png" width="150"></p> |
+|  測ったサイズを記録する<br>それぞれの部位名はガイド画像を参照&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  記録したサイズを表示<br>編集ボタンを押すことでサイズ編集画面へ遷移&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  
 
-|  公式LINE |    |
+
+|  サイズ新規記録ページ  |  サイズ詳細ページ  |
 | ---- | ---- |
-|  画像掲載予定  |  画像掲載予定  |
-|  クロササイズで記録したサイズデータをジャンルごとに取得できる<br>  |    |
+| <p align="center"><img src="https://user-images.githubusercontent.com/95204839/205239863-67c77cf8-c555-4e5a-b64b-042c206b7aa2.png" width="150"></p> | <p align="center"><img src="https://user-images.githubusercontent.com/95204839/205240090-32e75c39-442b-4f56-bef3-08139c114019.png" width="150"></p> |
+|  測ったサイズを記録する<br>それぞれの部位名はガイド画像を参照&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  記録したサイズを表示<br>編集ボタンを押すことでサイズ編集画面へ遷移&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  
+
+| サイズ編集ページ |    |
+| ---- | ---- |
+| <p align="center"><img src="https://user-images.githubusercontent.com/95204839/205240247-500caaac-afe5-4135-93ff-7a750b5be839.png" width="150"></p> | ---- |
+|  記録したサイズを変更する&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |    |  
 
 # このサービスを作成しようと思った背景
 以前、ネットショッピングで洋服を買った友人に失敗した言われたことがありました。  
