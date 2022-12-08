@@ -23,7 +23,7 @@ class Admin::MaterialsController < Admin::BaseController
   def edit; end
 
   def update
-    if @material
+    if @material.update(material_params)
       redirect_to admin_material_path(@material), success: t('.success')
     else
       render :edit
