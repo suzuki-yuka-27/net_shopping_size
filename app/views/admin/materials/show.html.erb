@@ -4,7 +4,7 @@
   </div>
   <div>
     <div class= "flex justify-center mt-5">
-      <%= image_tag @material.material_image_url, class: 'rounded-xl' %>
+      <%= image_tag @material.material_image_url, class: 'rounded-xl', size: '300x250' %>
     </div>
     <div class= "flex justify-center text-3xl font-bold mt-3">
       <%= @material.name %>
@@ -15,5 +15,5 @@
   </div>
 </div>
 <div class= "flex justify-center mt-16 px-6 py-3 bg-black text-white rounded-full">
-  <%= link_to 'Back', materials_path %>
+  <%= link_to 'Back', admin_materials_path %>
 </div>
