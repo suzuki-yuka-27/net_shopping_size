@@ -10,7 +10,6 @@ gem 'carrierwave', '~> 2.0'
 gem 'dotenv-rails'
 gem 'importmap-rails'
 gem 'jquery-rails'
-gem 'line-bot-api'
 gem 'meta-tags'
 gem "mini_magick"
 gem "puma"

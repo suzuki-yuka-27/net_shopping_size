@@ -147,7 +147,6 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
-    line-bot-api (1.26.0)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -351,7 +350,6 @@ DEPENDENCIES
   faker
   importmap-rails
   jquery-rails
-  line-bot-api
   meta-tags
   mini_magick
   mysql2 (~> 0.5.4)
