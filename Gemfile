@@ -10,10 +10,12 @@ gem 'carrierwave', '~> 2.0'
 gem 'dotenv-rails'
 gem 'importmap-rails'
 gem 'jquery-rails'
+gem 'line-bot-api'
 gem 'meta-tags'
 gem "mini_magick"
 gem "puma"
 gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
+gem "sassc-rails"
 gem 'sitemap_generator'
 gem 'sorcery'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
