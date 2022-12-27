@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post '/guest_login', to: 'guest_sessions#create'
   delete '/logout', to: 'guest_sessions#destroy'
 
+  post '/callback', to: 'line_bot#callback'
+
   resources :users, only: %i[new create]
 
   resource :top, only: %i[new create show edit update]
