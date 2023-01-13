@@ -48,7 +48,7 @@ class LineBotController < ApplicationController
                     "actions": [{
                         "type": "uri",
                         "label": "Account Link",
-                        "uri": "https://db30-2404-7a82-1821-7800-3964-8000-c7c2-d97b.jp.ngrok.io/link?linkToken=xxx"
+                        "uri": "https://2417-2404-7a82-1821-7800-602f-f91f-9818-4842.jp.ngrok.io/account_login?linkToken=xxx"
                     }]
                 }
             }]
@@ -69,7 +69,7 @@ class LineBotController < ApplicationController
               "actions": [{
                 "type": "uri",
                 "label": "OK",
-                "uri": "https://db30-2404-7a82-1821-7800-3964-8000-c7c2-d97b.jp.ngrok.io/login?linkToken=xxx"
+                "uri": "https://2417-2404-7a82-1821-7800-602f-f91f-9818-4842.jp.ngrok.io/account_login?linkToken=xxx"
               }]
             }
           }
@@ -77,8 +77,17 @@ class LineBotController < ApplicationController
         end
       end
     end
-
     # Don't forget to return a successful response
     "OK"
+  end
+
+  def link
+    user = User.find(current_user.id)
+    nonce = nonce(secret_key, time = Time.now)
+    user.save(params[:id], params[:nonce])
+    uri = URI.parse("https://access.line.me/dialog/bot/accountLink?linkToken={link token}&nonce={nonce}")
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = uri.scheme === "https"
+    req = Net::HTTP::Post.new(uri.path)
   end
 end
