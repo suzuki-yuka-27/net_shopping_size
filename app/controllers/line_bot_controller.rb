@@ -5,6 +5,7 @@ class LineBotController < ApplicationController
   require 'net/http'
   require 'uri'
   require 'json'
+  require "cgi/escape"
 
   def client
     @client ||= Line::Bot::Client.new { |config|
@@ -82,12 +83,14 @@ class LineBotController < ApplicationController
   end
 
   def link
-    user = User.find(current_user.id)
-    nonce = nonce(secret_key, time = Time.now)
-    user.save(params[:id], params[:nonce])
-    uri = URI.parse("https://access.line.me/dialog/bot/accountLink?linkToken={link token}&nonce={nonce}")
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = uri.scheme === "https"
-    req = Net::HTTP::Post.new(uri.path)
+    nonce = SecureRandom.base64(32)
+    current_user.update(nonce: nonce)
+    redirect_to "https://access.line.me/dialog/bot/accountLink?linkToken={linkToken}&nonce={CGI.escape(nonce)}", allow_other_host: true
+    message = {
+      type: 'text',
+      text: "アカウントを連携しました"
+    }
+    response = client.push_message("<to>", message)
+    p response
   end
 end
