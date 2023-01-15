@@ -1,0 +1,18 @@
+<div class= "md:mt-16 mb-5 p-4">
+  <div class= "flex justify-center mb-10">
+    <%= image_tag 'login_logo_image.png', size: '250x250' %>
+  </div>
+  <%= form_with url: account_login_path, local: true do |f| %>
+    <div>
+      <%= f.label :email, User.human_attribute_name(:email) %>
+      <%= f.text_field :email, placeholder: User.human_attribute_name(:email), class: 'mb-5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    </div>
+    <div>
+      <%= f.label :password, User.human_attribute_name(:password) %>
+      <%= f.password_field :password, placeholder: User.human_attribute_name(:password), class: 'mb-7 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    </div>
+    <div class= "flex flex-col items-center">
+      <%= f.submit t('defaults.login'), class: 'mt-7  bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
+    </div>
+  <% end %>
+</div>

@@ -5,6 +5,7 @@ class LineBotController < ApplicationController
   require 'net/http'
   require 'uri'
   require 'json'
+  require "cgi/escape"
 
   def client
     @client ||= Line::Bot::Client.new { |config|
@@ -48,7 +49,7 @@ class LineBotController < ApplicationController
                     "actions": [{
                         "type": "uri",
                         "label": "Account Link",
-                        "uri": "https://db30-2404-7a82-1821-7800-3964-8000-c7c2-d97b.jp.ngrok.io/link?linkToken=xxx"
+                        "uri": "https://2417-2404-7a82-1821-7800-602f-f91f-9818-4842.jp.ngrok.io/account_login?linkToken=xxx"
                     }]
                 }
             }]
@@ -69,7 +70,7 @@ class LineBotController < ApplicationController
               "actions": [{
                 "type": "uri",
                 "label": "OK",
-                "uri": "https://db30-2404-7a82-1821-7800-3964-8000-c7c2-d97b.jp.ngrok.io/login?linkToken=xxx"
+                "uri": "https://2417-2404-7a82-1821-7800-602f-f91f-9818-4842.jp.ngrok.io/account_login?linkToken=xxx"
               }]
             }
           }
@@ -77,8 +78,19 @@ class LineBotController < ApplicationController
         end
       end
     end
-
     # Don't forget to return a successful response
     "OK"
+  end
+
+  def link
+    nonce = SecureRandom.base64(32)
+    current_user.update(nonce: nonce)
+    redirect_to "https://access.line.me/dialog/bot/accountLink?linkToken={linkToken}&nonce={CGI.escape(nonce)}", allow_other_host: true
+    message = {
+      type: 'text',
+      text: "アカウントを連携しました"
+    }
+    response = client.push_message("<to>", message)
+    p response
   end
 end

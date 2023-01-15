@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   delete '/logout', to: 'guest_sessions#destroy'
 
   post '/callback', to: 'line_bot#callback'
+  get '/account_link', to: 'line_bot#link'
+  post '/account_link', to: 'line_bot#link'
+
+  get '/account_login', to: 'account#new'
+  post '/account_login', to: 'account#create'
 
   resources :users, only: %i[new create]
 
