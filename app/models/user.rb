@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_one :underwear, dependent: :destroy
 
   has_many :materials
+  has_many :quizzes
 
   enum role: { general: 0, admin: 1 }
 end
