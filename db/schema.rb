@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_13_173631) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_19_075156) do
   create_table "bottoms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.float "waist", null: false
     t.float "hip", null: false
@@ -71,6 +71,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_13_173631) do
     t.index ["user_id"], name: "index_outers_on_user_id"
   end
 
+  create_table "quiz_users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "quiz_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_quiz_users_on_quiz_id"
+    t.index ["user_id"], name: "index_quiz_users_on_user_id"
+  end
+
+  create_table "quizzes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "question", null: false
+    t.string "choice_1", null: false
+    t.string "choice_2", null: false
+    t.string "choice_3", null: false
+    t.string "choice_4", null: false
+    t.string "answer", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_quizzes_on_user_id"
+  end
+
   create_table "rings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.float "finger_circumference", null: false
     t.bigint "user_id", null: false
@@ -111,6 +133,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_13_173631) do
     t.datetime "updated_at", null: false
     t.integer "role", default: 0, null: false
     t.string "nonce", default: "0", null: false
+    t.integer "score", default: 0, null: false
   end
 
   add_foreign_key "bottoms", "users"
@@ -118,6 +141,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_13_173631) do
   add_foreign_key "materials", "users"
   add_foreign_key "one_pieces", "users"
   add_foreign_key "outers", "users"
+  add_foreign_key "quiz_users", "quizzes"
+  add_foreign_key "quiz_users", "users"
+  add_foreign_key "quizzes", "users"
   add_foreign_key "rings", "users"
   add_foreign_key "tops", "users"
   add_foreign_key "underwears", "users"

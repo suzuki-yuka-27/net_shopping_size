@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true
   validates :nonce, presence: true
+  validates :score, presence: true
 
   validates :password, length: { minimum: 5 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
