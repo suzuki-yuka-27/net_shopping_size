@@ -82,11 +82,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_075156) do
 
   create_table "quizzes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "question", null: false
+    t.string "question_image"
     t.string "choice_1", null: false
     t.string "choice_2", null: false
     t.string "choice_3", null: false
     t.string "choice_4", null: false
-    t.string "answer", null: false
+    t.boolean "answer", default: false, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
