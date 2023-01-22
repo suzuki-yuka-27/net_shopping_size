@@ -1,4 +1,5 @@
 class Quiz < ApplicationRecord
+  mount_uploader :question_image, QuestionImageUploader
   belongs_to :user
 
   validates :question, presence: true
@@ -6,5 +7,5 @@ class Quiz < ApplicationRecord
   validates :choice_2, presence: true
   validates :choice_3, presence: true
   validates :choice_4, presence: true
-  validates :answer, presence: true
+  validates :answer, inclusion: [true, false]
 end
