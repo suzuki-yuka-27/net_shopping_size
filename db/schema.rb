@@ -87,7 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_075156) do
     t.string "choice_2", null: false
     t.string "choice_3", null: false
     t.string "choice_4", null: false
-    t.boolean "answer", default: false, null: false
+    t.string "answer", default: "0", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
