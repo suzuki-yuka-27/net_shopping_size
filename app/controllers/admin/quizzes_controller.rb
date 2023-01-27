@@ -29,6 +29,11 @@ class Admin::QuizzesController < Admin::BaseController
     end
   end
 
+  def destroy
+    @quiz.destroy
+    redirect_to admin_quizzes_path
+  end
+
   private
 
   def quiz_params
