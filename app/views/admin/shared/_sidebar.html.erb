@@ -10,6 +10,11 @@
         <%= link_to Material.model_name.human, admin_materials_path %>
       </div>
     </li>
+    <li class="relative">
+      <div class= "flex justify-center py-5 font-bold">
+        <%= link_to Quiz.model_name.human, admin_quizzes_path %>
+      </div>
+    </li>
     <li>
       <div class= "flex justify-center py-5 font-bold">
         <%= button_to t('defaults.logout'), admin_logout_path, method: :delete %>

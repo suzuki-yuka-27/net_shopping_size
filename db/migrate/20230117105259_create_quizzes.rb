@@ -7,7 +7,7 @@ class CreateQuizzes < ActiveRecord::Migration[7.0]
       t.string :choice_2, null: false
       t.string :choice_3, null: false
       t.string :choice_4, null: false
-      t.string :answer, null: false
+      t.integer :answer, null: false
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
