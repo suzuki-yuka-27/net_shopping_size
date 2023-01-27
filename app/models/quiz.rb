@@ -7,5 +7,5 @@ class Quiz < ApplicationRecord
   validates :choice_2, presence: true
   validates :choice_3, presence: true
   validates :choice_4, presence: true
-  validates :answer, inclusion: [true, false]
+  validates :answer, presence: true
 end
