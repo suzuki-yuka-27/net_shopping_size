@@ -1,0 +1,45 @@
+<% set_meta_tags title: Quiz.model_name.human %>
+<div>
+  <div class= "flex justify-center mb-10">
+    <%= image_tag 'materials_logo_image.png', size: '500x500' %>
+  </div>
+  <%= form_with model: @quiz, url: admin_quizzes_path, local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class= "flex flex-col justify-center p-5">
+      <div class= "flex flex-col-start items-center">
+        <div class= "flex flex-col">
+          <%= f.label :question %>
+          <%= f.text_field :question, placeholder: Quiz.human_attribute_name(:question), class: 'mb-5 shadow text-gray-70 bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+        </div>
+      </div>
+      <div class= "flex flex-col">
+        <%= f.label :question_image %>
+        <%= f.file_field :question_image, size: '250x200', class: 'mb-5 shadow text-gray-70 bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+        <%= f.hidden_field :question_image_cache %>
+      </div>
+      <div class= "flex flex-col">
+        <%= f.label :choice_1 %>
+        <%= f.text_area :choice_1, placeholder: Quiz.human_attribute_name(:choice_1), class: 'mb-5 shadow text-gray-70 bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+      </div>
+      <div class= "flex flex-col">
+        <%= f.label :choice_2 %>
+        <%= f.text_area :choice_2, placeholder: Quiz.human_attribute_name(:choice_2), class: 'mb-5 shadow text-gray-70 bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+      </div>
+      <div class= "flex flex-col">
+        <%= f.label :choice_3 %>
+        <%= f.text_area :choice_3, placeholder: Quiz.human_attribute_name(:choice_3), class: 'mb-5 shadow text-gray-70 bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+      </div>
+      <div class= "flex flex-col">
+        <%= f.label :choice_4 %>
+        <%= f.text_area :choice_4, placeholder: Quiz.human_attribute_name(:choice_4), class: 'mb-5 shadow text-gray-70 bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+      </div>
+      <div class= "flex flex-col">
+        <%= f.label :answer %>
+        <%= f.select :answer, {choice_1: 1, choice_2: 2, choice_3: 3, choice_4: 4}, class: 'mb-5 shadow text-gray-70 bg-white border border-50 border-black rounded focus:border-none focus:ring-black/50 focus:ring-2' %>
+      </div>
+    </div>
+    <div class= "flex flex-col items-center">
+      <%= f.submit t('defaults.create'), class: 'mt-7 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow' %>
+    </div>
+  <% end %>
+</div>
