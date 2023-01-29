@@ -6,22 +6,30 @@
     <div class= "flex justify-center text-base mt-3">
       <%= @quiz.question %>
     </div>
+    <div class= "flex justify-end mr-3">
+      <div class= "bg-black text-white rounded-full px-5 py-3 mx-3">
+        <%= link_to 'Edit', edit_admin_quiz_path(@quiz) %>
+      </div>
+      <div class= "bg-black text-white rounded-full px-5 py-3">
+        <%= button_to 'Delete', admin_quiz_path(@quiz), method: :delete %>
+      </div>
+    </div>
     <div class= "flex justify-center mt-5">
       <%= image_tag @quiz.question_image_url, class: 'rounded-xl', size: '200x150' %>
     </div>
   </div>
 </div>
 <div class= "flex justify-center text-base mt-16 text-white font-bold bg-black px-20 py-3 rounded-full border border-black border-4 cursor-pointer hover:bg-white hover:text-black">
-  <%= @quiz.choice_1 %>
+  <%= button_to @quiz.choice_1  %>
 </div>
 <div class= "flex justify-center text-base mt-5 text-white font-bold bg-black px-20 py-3 rounded-full border border-black border-4 cursor-pointer hover:bg-white hover:text-black">
-  <%= @quiz.choice_2 %>
+  <%= button_to @quiz.choice_2 %>
 </div>
 <div class= "flex justify-center text-base mt-5 text-white font-bold bg-black px-20 py-3 rounded-full border border-black border-4 cursor-pointer hover:bg-white hover:text-black">
-  <%= @quiz.choice_3%>
+  <%= button_to @quiz.choice_3%>
 </div>
 <div class= "flex justify-center text-base mt-5 text-white font-bold bg-black px-20 py-3 rounded-full border border-black border-4 cursor-pointer hover:bg-white hover:text-black">
-  <%= @quiz.choice_4 %>
+  <%= button_to @quiz.choice_4 %>
 </div>
 <div class= "flex justify-center mt-16 px-6 py-3 bg-black text-white rounded-full">
   <%= link_to 'Back', admin_quizzes_path %>
