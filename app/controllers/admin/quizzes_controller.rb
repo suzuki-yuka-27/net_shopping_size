@@ -22,7 +22,7 @@ class Admin::QuizzesController < Admin::BaseController
   def edit; end
 
   def update
-    if @quiz.update
+    if @quiz.update(quiz_params)
       redirect_to admin_quizzes_path
     else
       render :new
