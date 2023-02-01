@@ -1,0 +1,18 @@
+<div class= "flex justify-center text-base mt-3">
+  <%= link_to quiz.question, admin_quiz_path(quiz) %>
+</div>
+<div class= "flex justify-center mt-5">
+  <%= image_tag quiz.question_image_url, class: 'rounded-xl', size: '200x150' %>
+</div>
+<div class= "flex justify-center text-base mt-16 text-white font-bold bg-black px-20 py-3 rounded-full border border-black border-4 cursor-pointer hover:bg-white hover:text-black">
+  <%= button_to quiz.choice_1  %>
+</div>
+<div class= "flex justify-center text-base mt-5 text-white font-bold bg-black px-20 py-3 rounded-full border border-black border-4 cursor-pointer hover:bg-white hover:text-black">
+  <%= button_to quiz.choice_2 %>
+</div>
+<div class= "flex justify-center text-base mt-5 text-white font-bold bg-black px-20 py-3 rounded-full border border-black border-4 cursor-pointer hover:bg-white hover:text-black">
+  <%= button_to quiz.choice_3%>
+</div>
+<div class= "flex justify-center text-base mt-5 text-white font-bold bg-black px-20 py-3 rounded-full border border-black border-4 cursor-pointer hover:bg-white hover:text-black">
+  <%= button_to quiz.choice_4 %>
+</div>
