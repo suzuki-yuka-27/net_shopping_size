@@ -49,7 +49,7 @@ class LineBotController < ApplicationController
                     "actions": [{
                         "type": "uri",
                         "label": "Account Link",
-                        "uri": "https://2417-2404-7a82-1821-7800-602f-f91f-9818-4842.jp.ngrok.io/account_login?linkToken=xxx"
+                        "uri": "https://c3e2-2404-7a82-1821-7800-291b-4839-941e-67c0.jp.ngrok.io/account_login?linkToken=xxx"
                     }]
                 }
             }]
@@ -70,7 +70,7 @@ class LineBotController < ApplicationController
               "actions": [{
                 "type": "uri",
                 "label": "OK",
-                "uri": "https://2417-2404-7a82-1821-7800-602f-f91f-9818-4842.jp.ngrok.io/account_login?linkToken=xxx"
+                "uri": "https://c3e2-2404-7a82-1821-7800-291b-4839-941e-67c0.jp.ngrok.io/account_login?linkToken=xxx"
               }]
             }
           }
